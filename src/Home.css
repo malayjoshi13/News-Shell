@@ -1,0 +1,34 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.content {
+  position: relative;
+  top: 9vh;
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+.navigate {
+  position: fixed;
+  top: 8vh;
+  width: 80%;
+  height: 4rem;
+  background-color: white;
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+.css-1h9z7r5-MuiButtonBase-root-MuiTab-root{
+  font-size: 12px !important;
+  min-width: 0px !important;
+}
+@media only screen and (max-width: 768px) {
+  .css-1h9z7r5-MuiButtonBase-root-MuiTab-root{
+    font-size: 10px !important;
+  }
+}
