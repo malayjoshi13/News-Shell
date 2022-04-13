@@ -15,19 +15,23 @@ function Allnews(props) {
   useEffect(() => {
     getNews();
     },[]);
-  const newsArr = newsData?Object.values(newsData):"";
-  const categoryData = newsArr.filter(element=>element.Domain===props.topic)
+    console.log(typeof(newsData.data))
+  const newsArr = newsData.data?Object.values(newsData.data):"";
+  // console.log(newsArr?newsArr.map(e=>{console.log(e)}):"")
+  const categoryData = newsArr?newsArr.filter(element=>element.Domain===props.topic):'';
   const totalData = 
   props.topic==='all'?
-  Object.values(newsData)
+  newsData.data?
+  newsData.data:''
   :
-  categoryData;
+  newsArr?
+  categoryData:'';
   return (<div className="container">
-    {totalData.map((ele)=>{
+    {totalData?totalData.map((ele)=>{
       return <News title={ele.Headline} 
-      date={ele.Date.Time} 
+      date={ele.Date.Time}
       category={ele.Domain} source={ele.Source} content={ele.Summarized_News} image={ele.Image_Url}/>
-    })}
+    }):''}
     </div>
   );
 }
