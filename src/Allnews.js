@@ -1,27 +1,25 @@
 import React, { useEffect, useState } from "react";
 import "./Allnews.css";
-import axios from "axios";
 import News from "./News";
 function Allnews(props) {
-  const [newsData, setNewsData] = useState();
-  
+  const [newsData, setNewsData] = useState([]);
+  const getNews = async() => {
+    try{
+    const Data = await fetch('http://127.0.0.1:5000/sumarize');
+    const dataNews = await Data.json();
+    setNewsData(dataNews);
+  }catch(e){
+      console.log(e);
+    }
+  }
   useEffect(() => {
-    axios
-      .get(`http://127.0.0.1:5000/sumarize`)
-      .then((res) => {
-        const Data = res.data;
-        setNewsData(Data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-    }, []);
-    
-  const newsArr = Object.values(newsData.data);
+    getNews();
+    },[]);
+  const newsArr = newsData?Object.values(newsData):"";
   const categoryData = newsArr.filter(element=>element.Domain===props.topic)
   const totalData = 
   props.topic==='all'?
-  Object.values(newsData.data)
+  Object.values(newsData)
   :
   categoryData;
   return (<div className="container">
