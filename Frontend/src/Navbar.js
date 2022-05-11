@@ -5,6 +5,7 @@ function Navbar() {
     
   return (
     <div className="Nav">
+      <div className="menu"></div>
       <div className="icon"></div>
       <div className="search">
         <img

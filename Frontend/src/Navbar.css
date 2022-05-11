@@ -10,6 +10,14 @@
     align-items: center;
     justify-content: center;
   }
+  .menu{
+    width: 30px;
+    height: 30px;
+    background-color: black;
+    position: absolute;
+    left: 20px;
+    display: none;
+  }
   .search{
     height:70%;
     width:60%;
@@ -44,7 +52,7 @@
     /* background-color: black; */
     background-size: 90px;
   }
-  @media only screen and (max-width:768px) {
+  @media only screen and (max-width:792px) {
     input{
       font-size: 14px;
       margin-left: 20px;
@@ -52,10 +60,14 @@
     .Nav .search img{
       margin-left: 15px;
     }
+  .menu{
+    display: block;
+  }
     .icon{
       background-size: 60px;
       height: 30px;
       width: 70px;
+      left: 60px;
     }
   }
   @media only screen and (max-width:425px) {

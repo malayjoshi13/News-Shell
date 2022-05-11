@@ -1,6 +1,10 @@
 import React from "react";
 import "./News.css";
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import StarOutlineIcon from '@mui/icons-material/StarOutline';
+import ForumRoundedIcon from '@mui/icons-material/ForumRounded';
+import BookmarkAddOutlinedIcon from '@mui/icons-material/BookmarkAddOutlined';
+import ShareIcon from '@mui/icons-material/Share';
+import VolumeUpIcon from '@mui/icons-material/VolumeUp';
 function News(props) {
   return (
     <div className="newsContainer">
@@ -12,23 +16,19 @@ function News(props) {
             <p className="newsContent">{props.content}
               </p>
           </div>
+          <div className="actionDiv">
+            <button className="actionButtons">Simplify It</button>
+            <button className="actionButtons">View More</button>
+          </div>
           <div className="actions">
-            <img
-              src="https://img.icons8.com/windows/96/4C4E52/star--v1.png"
-              alt="like"
-            />
-            <img
-              src="https://img.icons8.com/ios/100/g9g9/topic.png"
-              alt="comment"
-            />
-            <img
-              src="https://img.icons8.com/material-outlined/100/4C4E52/bookmark-ribbon--v1.png"
-              alt="bookmark"
-            />
-            <img
-              src="https://img.icons8.com/ios-glyphs/480/4C4E52/share--v1.png"
-              alt="share"
-            />
+            <StarOutlineIcon margin="4px" fontSize="small xs-10"></StarOutlineIcon>
+            <ForumRoundedIcon fontSize="small xs-10"></ForumRoundedIcon>
+            <BookmarkAddOutlinedIcon fontSize="small xs-10"></BookmarkAddOutlinedIcon>
+            <ShareIcon fontSize="small xs-10"></ShareIcon>
+            <VolumeUpIcon fontSize="small xs-10"></VolumeUpIcon>
+            </div>
+          <div className="readMore">
+            <p>Read More at <a className="linkSrc" href="">Hindustan.com</a></p>
           </div>
         </div>
         <div className="newsImage">
