@@ -18,7 +18,7 @@ function More(props) {
                   <img src='https://picsum.photos/seed/picsum/500/500'></img>
               </div>
           <div className="actions">
-            <StarOutlineIcon margin="4px" fontSize="small xs-10"></StarOutlineIcon>
+            <StarOutlineIcon fontSize="small xs-10"></StarOutlineIcon>
             <ForumRoundedIcon fontSize="small xs-10"></ForumRoundedIcon>
             <BookmarkAddOutlinedIcon fontSize="small xs-10"></BookmarkAddOutlinedIcon>
             <ShareIcon fontSize="small xs-10"></ShareIcon>

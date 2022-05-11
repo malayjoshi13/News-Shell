@@ -1,11 +1,10 @@
-
 import "./Navbar.css";
-
+import MenuIcon from '@mui/icons-material/Menu';
 function Navbar() {
     
   return (
     <div className="Nav">
-      <div className="menu"></div>
+      <div className="menu"><MenuIcon/></div>
       <div className="icon"></div>
       <div className="search">
         <img
