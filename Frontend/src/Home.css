@@ -17,6 +17,13 @@
   position: absolute;
   left: 20%;
 }
+.show{
+  position: fixed;
+  left: 0;
+  top: 38px;
+  z-index: 5;
+  border-right: 1px solid rgba(0,0,0,0.3);
+}
 .navigate {
   position: fixed;
   top: 8vh;
@@ -36,6 +43,11 @@
 @media only screen and (max-width: 768px) {
   .css-1h9z7r5-MuiButtonBase-root-MuiTab-root{
     font-size: 10px !important;
+  }
+}
+@media only screen and (min-width: 792px) {
+  .show{
+    display: none;
   }
 }
 @media only screen and (max-width: 792px) {

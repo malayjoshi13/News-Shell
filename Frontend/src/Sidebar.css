@@ -16,19 +16,33 @@
     margin: 10px 0;
 
     /* background-color: rgb(45, 95, 220); */
-    background-color: rgb(66, 135, 245);
     border-radius: 0 20px 20px 0;
     display: flex;
     align-items: center;
+    /* background-color: rgb(66, 135, 245); */
+    background-color: white;
+    /* color: white; */
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.6);
 }
 .chooseContent{
-    color: white;
     margin-left: 15%;
     width: 35%;
     height: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+.chooseContent2{
+    height: 30%;
+    width: 95%;
+    margin: 10px 0;
+    color: #fff;
+    /* background-color: rgb(45, 95, 220); */
+    border-radius: 0 20px 20px 0;
+    display: flex;
+    align-items: center;
+    background-color: rgb(66, 135, 245);
 }
 .lang{
     width: 100%;

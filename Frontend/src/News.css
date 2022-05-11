@@ -36,16 +36,24 @@
   margin: 5px 0;
 }
 .actions {
-  width: 18%;
+  width: 28%;
   height: 10%;
   display: flex;
   justify-content: space-between;
   margin-top: 6px;
   align-items: center;
 }
+.actionIcons{
+  width: 15px;
+  height: 15px;
+}
 .actionDiv{
   width: auto;
   height: 10%;
+}
+.moreLink{
+  text-decoration: none;
+  color: white;
 }
 .readMore{
   height: 10%;
@@ -117,8 +125,8 @@ margin-right: 5px;
 .actionButtons, .readMore{
   font-size: 8px;
 }
-  .newsDiv h1 {
-    font-size: 1rem;
+.newsDiv h1 {
+  font-size: 1rem;
   }
   .date {
     font-size: 0.3rem;
@@ -140,6 +148,12 @@ margin-right: 5px;
     height: 90%;
     width: 90%;
   }
+  .newsContent {
+    font-size: 0.5rem;
+  }
+  .actions{
+    width: 40%;
+  }
   .newsDiv {
     width: 100%;
   }
@@ -157,7 +171,7 @@ margin-right: 5px;
 }
 @media only screen and (max-width: 375px) {
   .actions {
-    width: 25%;
+    /* width: 25%; */
   }
   .newsContainer {
     /* height: 30.659rem; */

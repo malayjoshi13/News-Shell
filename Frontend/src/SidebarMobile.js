@@ -1,11 +1,11 @@
 import React from 'react'
-import './Sidebar.css'
+import './SidebarMobile.css'
 import LanguageIcon from '@mui/icons-material/Language';
 import FlagIcon from '@mui/icons-material/Flag';
-import { NavLink } from 'react-router-dom';
-function Sidebar() {
+import {NavLink} from 'react-router-dom' 
+function SidebarMobile() {
   return (
-    <div className='sideBar'>
+    <div className='slideBar'>
       <div className="contNavigation">
       <NavLink exact to='/' activeClassName='chooseContent2' className='chooseCont'><div >
         <div className='chooseContent'><LanguageIcon></LanguageIcon>News</div></div></NavLink>
@@ -24,4 +24,4 @@ function Sidebar() {
   )
 }
 
-export default Sidebar
+export default SidebarMobile

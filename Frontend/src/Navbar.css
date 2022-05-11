@@ -24,7 +24,6 @@
     border-radius: 10px;
     display: flex;
     align-items: center;
-    /* justify-content: center; */
     border: 1.5px solid rgba(73, 72, 72, 0.5);
   }
   .Nav .search img{
@@ -48,7 +47,6 @@
     object-fit:contain;
     position: absolute;
     left: 20px;
-    /* background-color: black; */
     background-size: 90px;
   }
   @media only screen and (max-width:792px) {
@@ -58,6 +56,9 @@
     }
     .Nav .search img{
       margin-left: 15px;
+    }
+    .search{
+      width: 40%;
     }
   .menu{
     display: block;
@@ -74,14 +75,24 @@
       background-size: 40px;
       height: 20px;
       width: 50px;
-      left: 10px;
+      left: 60px;
     }
     input{
-      font-size: 13px;
-      margin-left: 15px;
+      font-size: 10px;
+      margin-left: 10px;
     }
     .Nav .search img{
       margin-left: 10px;
+      height: 15px;
+      width: 15px;
+    }
+    .search{
+      width: 30%;
     }
   }
   
+  @media only screen and (max-width:425px) {
+input{
+      margin-left: 5px;
+    }
+  }

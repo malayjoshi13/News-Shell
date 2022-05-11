@@ -1,10 +1,16 @@
 import "./Navbar.css";
+import { useState } from "react";
 import MenuIcon from '@mui/icons-material/Menu';
-function Navbar() {
-    
+function Navbar(props) {
+  const [visible ,setVisible] = useState(false)
+    const handleChange = ()=>{
+      visible?setVisible(false):setVisible(true)
+    }
   return (
     <div className="Nav">
-      <div className="menu"><MenuIcon/></div>
+      <div className="menu" onClick={(e)=>{handleChange();
+      props.visible(visible)
+      }}><MenuIcon/></div>
       <div className="icon"></div>
       <div className="search">
         <img

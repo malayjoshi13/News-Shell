@@ -5,6 +5,8 @@ import ForumRoundedIcon from '@mui/icons-material/ForumRounded';
 import BookmarkAddOutlinedIcon from '@mui/icons-material/BookmarkAddOutlined';
 import ShareIcon from '@mui/icons-material/Share';
 import VolumeUpIcon from '@mui/icons-material/VolumeUp';
+import { Link } from "react-router-dom";
+// import { Box } from "@material-ui/core";
 function News(props) {
   return (
     <div className="newsContainer">
@@ -18,14 +20,24 @@ function News(props) {
           </div>
           <div className="actionDiv">
             <button className="actionButtons">Simplify It</button>
-            <button className="actionButtons">View More</button>
+            <button className="actionButtons"><Link className="moreLink" to='/more'>View More</Link></button>
           </div>
           <div className="actions">
-            <StarOutlineIcon margin="4px" fontSize="small xs-10"></StarOutlineIcon>
+            <div className="actionIcons">
+            <StarOutlineIcon fontSize="small xs-10"></StarOutlineIcon>
+            </div>
+            <div className="actionIcons">
             <ForumRoundedIcon fontSize="small xs-10"></ForumRoundedIcon>
+            </div>
+            <div className="actionIcons">
             <BookmarkAddOutlinedIcon fontSize="small xs-10"></BookmarkAddOutlinedIcon>
+            </div>
+            <div className="actionIcons">
             <ShareIcon fontSize="small xs-10"></ShareIcon>
+            </div>
+            <div className="actionIcons">
             <VolumeUpIcon fontSize="small xs-10"></VolumeUpIcon>
+            </div>
             </div>
           <div className="readMore">
             <p>Read More at <a className="linkSrc" href="">Hindustan.com</a></p>

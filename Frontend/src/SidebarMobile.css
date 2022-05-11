@@ -1,0 +1,30 @@
+.slideBar{
+    background-color: white;
+    width: 20vw;
+    height: 100vh;
+    transition: all 2s;
+    z-index: 14;
+}
+.chooseCont, .lang, .selectLang{
+    font-size: 12px;
+}
+.selectLang{
+    width: 100%;
+}
+.chooseContent{
+    width: 25%;
+}
+
+@media only screen and (max-width:645px) {
+    .slideBar{
+        width: 25vw;
+    }
+    .chooseCont, .lang, .selectLang{
+        font-size: 10px;
+    }
+}
+@media only screen and (max-width:425px) {
+    .lang, .selectLang{
+        font-size: 8px;
+    }
+}
