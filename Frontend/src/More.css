@@ -25,7 +25,7 @@
     width: 100%;
     border-radius: 10px;
     overflow: hidden;
-    object-fit: cover;
+    object-fit: fill;
     background-color: aqua;
 }
 .moreImg img{
