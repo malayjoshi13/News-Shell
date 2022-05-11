@@ -6,8 +6,13 @@ import BookmarkAddOutlinedIcon from '@mui/icons-material/BookmarkAddOutlined';
 import ShareIcon from '@mui/icons-material/Share';
 import VolumeUpIcon from '@mui/icons-material/VolumeUp';
 import { Link } from "react-router-dom";
+import { useState } from "react";
 // import { Box } from "@material-ui/core";
 function News(props) {
+  const [simplified, setSimplified] = useState(false)
+  const simplify = ()=>{
+    simplified?setSimplified(false):setSimplified(true)
+  }
   return (
     <div className="newsContainer">
       <div className="mainContainer">
@@ -19,7 +24,8 @@ function News(props) {
               </p>
           </div>
           <div className="actionDiv">
-            <button className="actionButtons">Simplify It</button>
+            <button className="actionButtons" onClick={()=>{simplify();
+            props.simplifyText(simplified)}}>{simplified?<p>Original Text</p>:<p>Simplify It</p>}</button>
             <button className="actionButtons"><Link className="moreLink" to='/more'>View More</Link></button>
           </div>
           <div className="actions">
@@ -40,7 +46,7 @@ function News(props) {
             </div>
             </div>
           <div className="readMore">
-            <p>Read More at <a className="linkSrc" href="">Hindustan.com</a></p>
+            <p>Read More at <a className="linkSrc" href="https://timesofindia.indiatimes.com/world/south-asia/sri-lanka-pm-mahinda-rajapaksas-residence-set-on-fire-in-kurunegala/articleshow/91450247.cms">The Times of India</a></p>
           </div>
         </div>
         <div className="newsImage">

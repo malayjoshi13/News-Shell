@@ -15,10 +15,10 @@ function More(props) {
             <h2 className="moreHeading">
               Hong Kong unveils $22 billion budget for virus-ridden economy
             </h2>
-            <p className="moredate">Feb 23 &#9679; World &#9679; news loadge, US policy</p>
+            <p className="moredate">May 9 &#9679; World &#9679; The Times of India</p>
             <div className="moreImg">
               <img
-                src="https://www.chinadailyhk.com/attachments/image/191/33/111/523795_220139/523795_220139_956_500_jpg.jpg"
+                src="https://static.toiimg.com/thumb/msid-91450239,imgsize-136062,width-400,resizemode-4/91450239.jpg"
                 alt="image"
               ></img>
             </div>
@@ -33,50 +33,17 @@ function More(props) {
           <div className="mainContent">
             <h3 className="moreh3">What?</h3>
             <p className="moreNewsCont">
-              Many tax curbs have been imposed which includes tax breaks and
-              vouchers for consumption spending to tackle the setbacks of
-              Omicron variant arising in the city.Hong Kong being an important
-              financial capital of the world; the new wave has caused a major
-              setback to the financial capital
-            </p>
+            Sri Lanka Prime Minister Mahinda Rajapaksa’s residence was set on fire and the country goes through an intensified civil strife amid a crippling economic crisis.
+A large number of protestors including the Inter-University Students Federation (IUSF) were out on the streets and attacked the Sri Lanka Mps. The military has been deployed on the roads to maintain calm despite an island-wide curfew.
+</p>
             <h3 className="moreh3">Where?</h3>
             <p className="moreNewsCont">
-              As one of the leading international financial centres, Hong Kong
-              is a prime location for financial services and home to many
-              financial institutions. Hong Kong’s financial markets operate
-              under effective and transparent regulations that are in line with
-              international standards. Located at the heart of Asia, Hong Kong
-              also thrives on close financial integration with Mainland China,
-              extensive networks with the rest of the world, sound legal system,
-              low and simple tax regime, free flow of capital, a full range of
-              financial products, and a large pool of financial talents. The
-              financial sector had a workforce of over 258,000, or nearly 7% of
-              working population in Hong Kong in 2017, and contributed to some
-              19% of Hong Kong's Gross Domestic Product.
-            </p>
+            This incident happened in the capital city of Sri Lanka, Colombo at Kurunegala, the residence city in the north-western province. The fire was set on the official residences of Sri Lanka’s Moratuwa Major Saman Lal Fernando and the Mps.
+</p>
             <h3 className="moreh3">Why?</h3>
             <p className="moreNewsCont">
-              Coronavirus disease 2019 (COVID-19) is a contagious disease caused
-              by a virus, the severe acute respiratory syndrome coronavirus 2
-              (SARS-CoV-2). The first known case was identified in Wuhan, China,
-              in December 2019. The disease has since spread worldwide, leading
-              to the ongoing COVID-19 pandemic. Symptoms of COVID‑19 are
-              variable, but often include fever,[9] cough, headache, fatigue,
-              breathing difficulties, loss of smell, and loss of taste. Symptoms
-              may begin one to fourteen days after exposure to the virus. At
-              least a third of people who are infected do not develop noticeable
-              symptoms.[14] Of those people who develop symptoms noticeable
-              enough to be classed as patients, most (81%) develop mild to
-              moderate symptoms (up to mild pneumonia), while 14% develop severe
-              symptoms (dyspnea, hypoxia, or more than 50% lung involvement on
-              imaging), and 5% suffer critical symptoms (respiratory failure,
-              shock, or multiorgan dysfunction). Older people are at a higher
-              risk of developing severe symptoms. Some people continue to
-              experience a range of effects (long COVID) for months after
-              recovery, and damage to organs has been observed. Multi-year
-              studies are underway to further investigate the long-term effects
-              of the disease.
-            </p>
+            The residence was set on fire because the Prime Minister tendered his resignation to President Gotabaya Rajapaksa and has called for the formation of an all-party interim government to handle the ongoing economic crisis in the country. The recession is attributed to foreign exchange shortages caused by a fall in tourism during the COVID-19 pandemic, as well as reckless economic policies, like the government’s move last year to ban chemical fertilizers in a bid to make Sri Lanka’s agriculture “100 per cent organic”.
+</p>
           </div>
           <div className="backButton">
             <button className="backBtn">

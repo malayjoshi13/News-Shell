@@ -1,6 +1,76 @@
 [
   {
     "Domain": "world",
+    "Headline": "Sri Lanka PM Mahinda Rajapaksa's residence set on fire in Kurunegala.",
+    "Date": {
+       "Time": "9 May"
+    },
+    "Summarized_News": " Sri Lanka is facing its worst economic crisis since independence with food and fuel shortages, soaring prices, and power cuts affecting a large number of the citizens, resulting in massive protests over the government's handling of the situation. Earlier today, anti-government protesters set on fire the official residences of Sri Lanka's Moratuwa Mayor Saman Lal Fernando and the MPs Sanath Nishantha, Ramesh Pathirana, Mahipala Herath, Thissa Kuttiarachchi, and Nimal Lanza. Also, Sri Lanka Prime Minister Mahinda Rajapaksa's residence in the city of Kurunegala in the north-western province was set on fire on Monday, hours after the leader tendered his resignation to President Gotabaya Rajapaksa.",
+    "Image_Url": "https://static.toiimg.com/thumb/msid-91450239,imgsize-136062,width-400,resizemode-4/91450239.jpg",
+    "Source": "The Times of India"
+ },
+ {
+   "Domain": "world",
+   "Headline": "Amsterdam hostage taker asked for 200 million in cryptocurrencies",
+   "Date": {
+      "Time": "24 Feb"
+   },
+   "Summarized_News": " A man who held several people hostage at an Apple store in Amsterdam demanded 200 million euros ($230 million) in cryptocurrency before he was taken to hospital “seriously injured,” police said Wednesday. The man, identified as a 27-year-old from Amsterdam, entered the Apple Store with a firearm in the busy Leidseplein neighborhood on Tuesday afternoon, sparking a tense five-hour ordeal. The camouflage-clad assailant reportedly took one man, a 44-year-old British citizen, hostage while four others hid in a cupboard. It was initially feared that the suspect was holding several people hostage, but he was reportedly unaware that several other",
+   "Image_Url": "https://img-s-msn-com.akamaized.net/tenant/amp/entityid/AAUcy2R.img?h=630&w=1200&m=6&q=60&o=t&l=f&f=jpg",
+   "Source": "news lodge"
+},
+{
+  "Domain": "entertainment",
+  "Headline": "Archana Puran Singh responds to memes after Navjot Singh Sidhu’s defeat: ‘This is at my expense more than Sidhu’s’",
+  "Date": {
+     "Time": "March 12"
+  },
+  "Summarized_News": " Actor and TV personality Archana Puran Singh, best known for playing the role of Miss Braganza in the film Kuch Kuch Hota Hai, is now seen as the permanent guest on The Kapil Sharma Show. She had famously stepped in when the show’s former guest, Navjot Singh Sidhu, bowed out in 2019. Earlier this week, Archana started trending after the politician’s defeat in the recently concluded Assembly elections in Punjab. Social media sites were flooded by memes and jokes about how her Sidhu may return to claim his seat on Kapil’s show.",
+  "Image_Url": "https://images.indianexpress.com/2022/03/archana-puran-singh-navjot-singh-sidhu-1200.jpg",
+  "Source": "indian express"
+},
+{
+  "Domain": "entertainment",
+  "Headline": "‘Stop judging a woman based on hemlines and necklines’: Samantha Ruth Prabhu pens powerful note after her red carpet appearance",
+  "Date": {
+     "Time": "March 13"
+  },
+  "Summarized_News": " Samantha Ruth Prabhu on Saturday penned a note talking about how women are easily judged for the dress they wear, the race they belong to or even their skin tone. She asked people to focus on “bettering” themselves instead of passing remarks about women based on their hemlines and necklines. “As a woman, I bear firsthand knowledge of what it means to be judged. We judge women based on what they wear, their race, education, social standing, appearance, skin tone and the list goes on and on.",
+  "Image_Url": "https://images.indianexpress.com/2022/03/Samanha.jpg",
+  "Source": "indian express"
+},
+{
+  "Domain": "world",
+  "Headline": "Hong Kong unveils $22 billion budget for virus-ridden economy",
+  "Date": {
+     "Time": "Feb 23"
+  },
+  "Summarized_News": " Hong Kong’s finance chief unveiled a costly 170 billion Hong Kong dollars ($21.79 billion) budget on Wednesday, which includes tax breaks and vouchers for consumption spending, as the city reels under its worst coronavirus outbreak. As rival financial centers emerge from pandemic isolation and reopen to the world, Hong Kong has been overwhelmed by the highly infectious Omicron variant after the city’s successful zero-Covid strategy collapsed. The surge has prompted the reimposition of painful restrictions that have shuttered many businesses, shuttered schools, pushed authorities to order multiple rounds of mass testing and deepened the city’s international isolation.",
+  "Image_Url": "https://www.chinadailyhk.com/attachments/image/191/33/111/523795_220139/523795_220139_956_500_jpg.jpg",
+  "Source": "news loadge, US policy"
+},
+{
+  "Domain": "entertainment",
+  "Headline": "Pieces of Her, Maaran, The Adam Project: Top 9 shows and films to watch this weekend\n",
+  "Date": {
+     "Time": "March 13"
+  },
+  "Summarized_News": " \"Not sure what to watch? For this weekend, we have 9 titles that would be worth your time -- from Prabhas Radhe Shyam to Toni Collette starrer Pieces of Her on Netflix. The week ahead offers a plethora of entertainment choices both in theatres and on OTT. If you like period dramas and romances, Prabhas-starrer Radhe Shyam out in theatres now, is meant for you. The brilliant Toni Collette returns in Pieces of Her (Netflix) while the Oscar-nominated Spanish film Madres Paralelas (Parallel Mothers) is playing in cinemas.The 20-episode series is led by Saba Qamar\"",
+  "Image_Url": "https://images.indianexpress.com/2022/03/what-to-watch-.jpg",
+  "Source": "indian express"
+},
+{
+  "Domain": "technology",
+  "Headline": "C Is The Most Environmentally Friendly Programming Language",
+  "Date": {
+     "Time": "March 12"
+  },
+  "Summarized_News": " Communication is very important, and the primary means of communication and interaction known to humans is through language. Just like humans communicate, computers and their systems communicate too. Take a closer look at your computer, you&rsquo;ll realize there&rsquo;s not much difference. There are quite a number of pieces of software and hardware that require communicating with each other right from the moment you put them on your system. Your application is reacting to the click on your mouse or to a keyboard typing or even the mic when using voice commands and control.",
+  "Image_Url": "https://images.unsplash.com/photo-1542831371-29b0f74f9713?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MXwyNTc0MjA0MXx8ZW58MHx8fHw%3D&w=1000&q=80",
+  "Source": "techbooky"
+},
+  {
+    "Domain": "world",
     "Headline": "WHO urges Ukraine to destroy laboratory pathogens",
     "Date": {
        "Time": "12 March"
@@ -18,27 +88,7 @@
     "Summarized_News": "Russian President Vladimir Putin on Sunday accused Ukrainian authorities of wasting “an opportunity” for talks after Moscow’s invasion of its pro-Western neighbor.",
     "Image_Url": "https://guardian.ng/wp-content/uploads/2022/02/Vladimir-Putin-2.jpg",
     "Source": "news lodge"
- },
-  {
-    "Domain": "world",
-    "Headline": "Hong Kong unveils $22 billion budget for virus-ridden economy",
-    "Date": {
-       "Time": "Feb 23"
-    },
-    "Summarized_News": " Hong Kong’s finance chief unveiled a costly 170 billion Hong Kong dollars ($21.79 billion) budget on Wednesday, which includes tax breaks and vouchers for consumption spending, as the city reels under its worst coronavirus outbreak. As rival financial centers emerge from pandemic isolation and reopen to the world, Hong Kong has been overwhelmed by the highly infectious Omicron variant after the city’s successful zero-Covid strategy collapsed. The surge has prompted the reimposition of painful restrictions that have shuttered many businesses, shuttered schools, pushed authorities to order multiple rounds of mass testing and deepened the city’s international isolation.",
-    "Image_Url": "https://www.chinadailyhk.com/attachments/image/191/33/111/523795_220139/523795_220139_956_500_jpg.jpg",
-    "Source": "news loadge, US policy"
- },
-  {
-    "Domain": "world",
-    "Headline": "Amsterdam hostage taker asked for 200 million in cryptocurrencies",
-    "Date": {
-       "Time": "24 Feb"
-    },
-    "Summarized_News": " A man who held several people hostage at an Apple store in Amsterdam demanded 200 million euros ($230 million) in cryptocurrency before he was taken to hospital “seriously injured,” police said Wednesday. The man, identified as a 27-year-old from Amsterdam, entered the Apple Store with a firearm in the busy Leidseplein neighborhood on Tuesday afternoon, sparking a tense five-hour ordeal. The camouflage-clad assailant reportedly took one man, a 44-year-old British citizen, hostage while four others hid in a cupboard. It was initially feared that the suspect was holding several people hostage, but he was reportedly unaware that several other",
-    "Image_Url": "https://img-s-msn-com.akamaized.net/tenant/amp/entityid/AAUcy2R.img?h=630&w=1200&m=6&q=60&o=t&l=f&f=jpg",
-    "Source": "news lodge"
- },
+   },
   {
     "Domain": "world",
     "Headline": "Saied of Tunisia declares ‘war’ against food speculation",
@@ -61,16 +111,6 @@
  },
   {
     "Domain": "technology",
-    "Headline": "Facebook Modifies Hate Speech Rule To Allow “Violent” Content Toward Russian Authorities",
-    "Date": {
-       "Time": "March 12"
-    },
-    "Summarized_News": " Meta, one of the tech platforms that had placed sanctions on Russia in the wake of the assault on Ukraine has on Thursday modified its approach to hate speech by allowing violent comments on its platforms targeted at Russian authorities.",
-    "Image_Url": "https://i0.wp.com/techbooky.com/wp-content/uploads/2022/03/123633679_mediaitem123633678.jpg?w=976&ssl=1",
-    "Source": "techbooky, indian express"
- },
-  {
-    "Domain": "technology",
     "Headline": "Russia Will Ban Instagram In The Days Ahead",
     "Date": {
        "Time": "March 12"
@@ -78,16 +118,6 @@
     "Summarized_News": " Russia’s Communications Agency, Roskpmnadzor has announced the ban of video and picture platform, Instagramfrom the country, effective March 14, 2022. This coming just a week after it banned its sister platform, Facebook after it accused the social media giant of ‘discriminating against theRussian media’. The Russian authorities while justifying the addition of Instagram to the ban premised its decision on Meta’s decision to modify its hate speech rule to allow posts and comments calling for violence against Russian authorities. The Russian agency in a statement announcing the ban of Instagram said: “As you know, on March 11, Meta Platforms Inc.",
     "Image_Url": "https://i0.wp.com/techbooky.com/wp-content/uploads/2022/03/787DF9C7-8B7B-425D-9BDC-8FAD27FFF240.jpeg?w=715&ssl=1",
     "Source": "techbooky, US policy"
- },
-  {
-    "Domain": "technology",
-    "Headline": "C Is The Most Environmentally Friendly Programming Language",
-    "Date": {
-       "Time": "March 12"
-    },
-    "Summarized_News": " Communication is very important, and the primary means of communication and interaction known to humans is through language. Just like humans communicate, computers and their systems communicate too. Take a closer look at your computer, you&rsquo;ll realize there&rsquo;s not much difference. There are quite a number of pieces of software and hardware that require communicating with each other right from the moment you put them on your system. Your application is reacting to the click on your mouse or to a keyboard typing or even the mic when using voice commands and control.",
-    "Image_Url": "https://images.unsplash.com/photo-1542831371-29b0f74f9713?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MXwyNTc0MjA0MXx8ZW58MHx8fHw%3D&w=1000&q=80",
-    "Source": "techbooky"
  },
   {
     "Domain": "technology",
@@ -109,6 +139,16 @@
     "Image_Url": "https://i0.wp.com/static.news.bitcoin.com/wp-content/uploads/2022/03/exec-order1.jpg?ssl=1",
     "Source": "techbooky, techbooky"
  },
+ {
+   "Domain": "technology",
+   "Headline": "Facebook Modifies Hate Speech Rule To Allow “Violent” Content Toward Russian Authorities",
+   "Date": {
+      "Time": "March 12"
+   },
+   "Summarized_News": " Meta, one of the tech platforms that had placed sanctions on Russia in the wake of the assault on Ukraine has on Thursday modified its approach to hate speech by allowing violent comments on its platforms targeted at Russian authorities.",
+   "Image_Url": "https://i0.wp.com/techbooky.com/wp-content/uploads/2022/03/123633679_mediaitem123633678.jpg?w=976&ssl=1",
+   "Source": "techbooky, indian express"
+},
   {
     "Domain": "entertainment",
     "Headline": "Netflix cancels The Baby-Sitters Club series after season 2",
@@ -121,26 +161,6 @@
  },
   {
     "Domain": "entertainment",
-    "Headline": "Archana Puran Singh responds to memes after Navjot Singh Sidhu’s defeat: ‘This is at my expense more than Sidhu’s’",
-    "Date": {
-       "Time": "March 12"
-    },
-    "Summarized_News": " Actor and TV personality Archana Puran Singh, best known for playing the role of Miss Braganza in the film Kuch Kuch Hota Hai, is now seen as the permanent guest on The Kapil Sharma Show. She had famously stepped in when the show’s former guest, Navjot Singh Sidhu, bowed out in 2019. Earlier this week, Archana started trending after the politician’s defeat in the recently concluded Assembly elections in Punjab. Social media sites were flooded by memes and jokes about how her Sidhu may return to claim his seat on Kapil’s show.",
-    "Image_Url": "https://images.indianexpress.com/2022/03/archana-puran-singh-navjot-singh-sidhu-1200.jpg",
-    "Source": "indian express"
- },
-  {
-    "Domain": "entertainment",
-    "Headline": "Pieces of Her, Maaran, The Adam Project: Top 9 shows and films to watch this weekend\n",
-    "Date": {
-       "Time": "March 13"
-    },
-    "Summarized_News": " \"Not sure what to watch? For this weekend, we have 9 titles that would be worth your time -- from Prabhas Radhe Shyam to Toni Collette starrer Pieces of Her on Netflix. The week ahead offers a plethora of entertainment choices both in theatres and on OTT. If you like period dramas and romances, Prabhas-starrer Radhe Shyam out in theatres now, is meant for you. The brilliant Toni Collette returns in Pieces of Her (Netflix) while the Oscar-nominated Spanish film Madres Paralelas (Parallel Mothers) is playing in cinemas.The 20-episode series is led by Saba Qamar\"",
-    "Image_Url": "https://images.indianexpress.com/2022/03/what-to-watch-.jpg",
-    "Source": "indian express"
- },
-  {
-    "Domain": "entertainment",
     "Headline": "When Shah Rukh Khan said Atif Aslam was too busy to sing for his film: ‘I would love to sing for you any day…’",
     "Date": {
        "Time": "March 13"
@@ -148,16 +168,6 @@
     "Summarized_News": " Pakistani singer Atif Aslam is a sensation in his own right. He has a massive fan base in the Indian subcontinent, and has consistently churned out chartbusters — peppy ones, soulful ones, romantic ballads — since the beginning of his career in 2003. He began his career with the band Jal and later broke away to forge his own path as a solo artiste.",
     "Image_Url": "https://images.indianexpress.com/2022/03/srk1200-1.jpg",
     "Source": "indian express, ndtv"
- },
-  {
-    "Domain": "entertainment",
-    "Headline": "‘Stop judging a woman based on hemlines and necklines’: Samantha Ruth Prabhu pens powerful note after her red carpet appearance",
-    "Date": {
-       "Time": "March 13"
-    },
-    "Summarized_News": " Samantha Ruth Prabhu on Saturday penned a note talking about how women are easily judged for the dress they wear, the race they belong to or even their skin tone. She asked people to focus on “bettering” themselves instead of passing remarks about women based on their hemlines and necklines. “As a woman, I bear firsthand knowledge of what it means to be judged. We judge women based on what they wear, their race, education, social standing, appearance, skin tone and the list goes on and on.",
-    "Image_Url": "https://images.indianexpress.com/2022/03/Samanha.jpg",
-    "Source": "indian express"
  },
   {
     "Domain": "sports",
@@ -359,6 +369,26 @@
     "Image_Url": "https://c.ndtvimg.com/2022-03/3gjjt5r_covid-patient-bloomberg_625x300_08_March_22.jpg",
     "Source": "ndtv, US policy"
  },
+ {
+   "Domain": "Education",
+   "Headline": "NEET updates, CBSE Class 10 term-1 results, term-2 datesheet and more: Top education news last week",
+   "Date": {
+      "Time": "March 13"
+   },
+   "Summarized_News": " The much awaited class 10 term-1 board exam results and term-2 datesheet for classes 10 and 12 were released this week. However, the class 10 term-1 results were declared with a twist this time. Meanwhile, several other state boards such as BSEB,BOSE, WBC HSE, UP Board and more also released several notifications regarding datesheets, answer keys, revision of exam schedule and more. Several important notifications from NEET were also released this week, and results for UCEED, CEED, and registrations for other competitive exams also opened. A lot happened in education this week — here’s a recap: One of the",
+   "Image_Url": "https://images.indianexpress.com/2022/03/Education-news.jpg",
+   "Source": "the indian express, ndtv"
+},
+{
+   "Domain": "Education",
+   "Headline": "As CBSE informs Class 10 marks to schools, students miss thrill of checking results online",
+   "Date": {
+      "Time": "March 13"
+   },
+   "Summarized_News": " Students of class 10 had been eagerly waiting for their term-1 results for the last two months and after the result was released through schools, they said missed the fun of checking their scores online with friends and family.“The result being declared offline, definitely, has reduced the hassle but also has taken away the buzz and excitement of going on the website and calculating the percentage yourself! The charm is lost and it being declared just one month before the term 2 board exams has given us very little time to think about it or even celebrate it.",
+   "Image_Url": "https://images.indianexpress.com/2022/03/CBSE-1.jpg",
+   "Source": "the indian express"
+},
   {
     "Domain": "Education",
     "Headline": "MCC adds additional MBBS seats for mop-up round for NEET UG 2021 counselling",
@@ -379,26 +409,7 @@
     "Image_Url": "https://images.indianexpress.com/2022/03/IIT-Madras-1.jpg",
     "Source": "the indian express"
  },
-  {
-    "Domain": "Education",
-    "Headline": "NEET updates, CBSE Class 10 term-1 results, term-2 datesheet and more: Top education news last week",
-    "Date": {
-       "Time": "March 13"
-    },
-    "Summarized_News": " The much awaited class 10 term-1 board exam results and term-2 datesheet for classes 10 and 12 were released this week. However, the class 10 term-1 results were declared with a twist this time. Meanwhile, several other state boards such as BSEB,BOSE, WBC HSE, UP Board and more also released several notifications regarding datesheets, answer keys, revision of exam schedule and more. Several important notifications from NEET were also released this week, and results for UCEED, CEED, and registrations for other competitive exams also opened. A lot happened in education this week — here’s a recap: One of the",
-    "Image_Url": "https://images.indianexpress.com/2022/03/Education-news.jpg",
-    "Source": "the indian express, ndtv"
- },
-  {
-    "Domain": "Education",
-    "Headline": "As CBSE informs Class 10 marks to schools, students miss thrill of checking results online",
-    "Date": {
-       "Time": "March 13"
-    },
-    "Summarized_News": " Students of class 10 had been eagerly waiting for their term-1 results for the last two months and after the result was released through schools, they said missed the fun of checking their scores online with friends and family.“The result being declared offline, definitely, has reduced the hassle but also has taken away the buzz and excitement of going on the website and calculating the percentage yourself! The charm is lost and it being declared just one month before the term 2 board exams has given us very little time to think about it or even celebrate it.",
-    "Image_Url": "https://images.indianexpress.com/2022/03/CBSE-1.jpg",
-    "Source": "the indian express"
- },
+  
   {
     "Domain": "business",
     "Headline": "Cash-rich states create ‘competitive environment’ with flurry of tax cuts",
@@ -409,6 +420,16 @@
     "Image_Url": "https://image.cnbcfm.com/api/v1/image/107027881-1646852805478-gettyimages-1366673942-002a1219.jpeg?v=1646852843&w=740&h=416",
     "Source": "cnbc, US policy"
  },
+ {
+   "Domain": "business",
+   "Headline": "All you need to know about US Prez Joe Biden’s crypto executive order",
+   "Date": {
+      "Time": "March 11"
+   },
+   "Summarized_News": "US President Joe Biden on March 10 signed the ‘Executive Order on Ensuring Responsible Development of Digital Assets.’ The executive order is the first comprehensive set of rules for governing cryptocurrencies and other virtual assets in the US. The US has once again emerged as a centre of crypto activity. The country is now home to over 35 percent of Bitcoin’s mining volume capacity and to over 100 million cryptocurrency investors through its various cryptocurrency exchanges in the country.",
+   "Image_Url": "https://images.cnbctv18.com/wp-content/uploads/2021/09/Bitcoin-UK-1019x573.jpg?impolicy=website&width=500&height=300",
+   "Source": "cnbc tv 18, ndtv"
+},
   {
     "Domain": "business",
     "Headline": "Deutsche Bank reverses course on Russia, says it is unwinding business there after Ukraine invasion",
@@ -438,15 +459,5 @@
     "Summarized_News": " Indian equity benchmarks managed to extend gains to a fourth straight session on Friday but lost steam, as advances in pharma and select financial stocks were countered by declines in auto stocks.",
     "Image_Url": "https://images.cnbctv18.com/wp-content/uploads/2021/08/nifty-market-1000x573.jpg?impolicy=website&width=500&height=300",
     "Source": "cnbc tv 18"
- },
-  {
-    "Domain": "business",
-    "Headline": "All you need to know about US Prez Joe Biden’s crypto executive order",
-    "Date": {
-       "Time": "March 11"
-    },
-    "Summarized_News": "US President Joe Biden on March 10 signed the ‘Executive Order on Ensuring Responsible Development of Digital Assets.’ The executive order is the first comprehensive set of rules for governing cryptocurrencies and other virtual assets in the US. The US has once again emerged as a centre of crypto activity. The country is now home to over 35 percent of Bitcoin’s mining volume capacity and to over 100 million cryptocurrency investors through its various cryptocurrency exchanges in the country.",
-    "Image_Url": "https://images.cnbctv18.com/wp-content/uploads/2021/09/Bitcoin-UK-1019x573.jpg?impolicy=website&width=500&height=300",
-    "Source": "cnbc tv 18, ndtv"
- }
+   }
  ]
