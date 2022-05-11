@@ -7,6 +7,7 @@ import { Route, Switch, BrowserRouter } from "react-router-dom";
 import More from "./More";
 import SidebarMobile from "./SidebarMobile";
 import Content from './Content'
+import Policies from "./Policies";
 function Home() {
   const [show, setShow] = useState(false)
   const handleMenu = (visible)=>{
@@ -22,9 +23,7 @@ function Home() {
        <Switch>
          <Route exact path="/" component={Content}></Route>
          <Route exact path="/more" component={More}></Route>
-         
-       {/* <Content/> */}
-       {/* <More/> */}
+         <Route exact path="/policies" component={Policies}></Route>
        </Switch>
       </div>
     </>

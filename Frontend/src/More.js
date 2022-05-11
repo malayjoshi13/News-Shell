@@ -33,6 +33,9 @@ function More(props) {
             <h3 className='moreh3'>Why?</h3>
             <p className='moreNewsCont'>fdhijsbl</p>
             </div>
+            <div className='backButton'>
+              <button className='backBtn'><a className='backLink' href='/policies'>Back</a></button>
+            </div>
         </div>
     </div>
     </div>

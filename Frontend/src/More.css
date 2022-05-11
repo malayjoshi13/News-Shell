@@ -55,7 +55,26 @@
     height: 30%;
 }
 .mainContent{
-    height: 70%;
+    height: 60%;
+}
+.backButton{
+    height: 10%;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.backBtn{
+    padding: 7px 14px;
+    background-color: royalblue;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 15px;
+}
+.backLink{
+    text-decoration: none;
+    color: white;
 }
 @media only screen and (max-width:792px){
     .moreNews{
@@ -75,6 +94,9 @@
         font-size: 10px;
     }
     .moreNewsCont{
+        font-size: 12px;
+    }
+    .backBtn{
         font-size: 12px;
     }
 }

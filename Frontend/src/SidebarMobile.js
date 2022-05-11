@@ -9,7 +9,7 @@ function SidebarMobile() {
       <div className="contNavigation">
       <NavLink exact to='/' activeClassName='chooseContent2' className='chooseCont'><div >
         <div className='chooseContent'><LanguageIcon></LanguageIcon>News</div></div></NavLink>
-        <NavLink exact to='/more' activeClassName='chooseContent2' className='chooseCont'><div ><div className='chooseContent'><FlagIcon></FlagIcon>Policies</div></div></NavLink>
+        <NavLink exact to='/policies' activeClassName='chooseContent2' className='chooseCont'><div ><div className='chooseContent'><FlagIcon></FlagIcon>Policies</div></div></NavLink>
       </div>
       <div className='lang'>
         <div className='langChoose'>

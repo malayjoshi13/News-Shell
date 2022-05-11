@@ -125,6 +125,9 @@ margin-right: 5px;
 .actionButtons, .readMore{
   font-size: 8px;
 }
+.actions{
+  height: 15%;
+}
 .newsDiv h1 {
   font-size: 1rem;
   }
@@ -148,6 +151,9 @@ margin-right: 5px;
     height: 90%;
     width: 90%;
   }
+  .actions{
+    height: 10%;
+  }
   .newsContent {
     font-size: 0.5rem;
   }
@@ -170,12 +176,6 @@ margin-right: 5px;
   }
 }
 @media only screen and (max-width: 375px) {
-  .actions {
-    /* width: 25%; */
-  }
-  .newsContainer {
-    /* height: 30.659rem; */
-  }
   .mainContainer {
     height: 93%;
   }
