@@ -1,4 +1,7 @@
 {
+  "scripts":{
+    "start": "node app.js"
+  },
   "dependencies": {
     "@symblai/symbl-js": "^1.4.7",
     "express": "^4.18.1",
