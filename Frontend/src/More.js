@@ -13,7 +13,7 @@ function More(props) {
         <div className="mNewsContainer">
           <div className="mImage">
             <h2 className="moreHeading">
-              Hong Kong unveils $22 billion budget for virus-ridden economy
+            Sri Lanka PM Mahinda Rajapaksa's residence set on fire in Kurunegala.
             </h2>
             <p className="moredate">May 9 &#9679; World &#9679; The Times of India</p>
             <div className="moreImg">
