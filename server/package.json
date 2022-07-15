@@ -1,6 +1,7 @@
 {
   "scripts":{
-    "start": "node app.js"
+    "start": "node app.js",
+    "serve": "nodemon app.js"
   },
   "dependencies": {
     "@symblai/symbl-js": "^1.4.7",

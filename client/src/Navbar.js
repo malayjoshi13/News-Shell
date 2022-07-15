@@ -8,7 +8,8 @@ import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
-import Mic from './Mic';
+// import Mic from './Mic';
+
 
 function Navbar(props) {
   const [visible ,setVisible] = useState(false)
@@ -44,7 +45,7 @@ function Navbar(props) {
         <DialogTitle>{"How are you?"}</DialogTitle>
         <DialogContent>
           <DialogContentText>
-            <Mic/>
+            {/* <Mic/> */}
           </DialogContentText>
         </DialogContent>
         <DialogActions>
