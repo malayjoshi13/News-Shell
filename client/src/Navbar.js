@@ -8,8 +8,7 @@ import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
-// import Mic from './Mic';
-
+import Mic from './Mic';
 
 function Navbar(props) {
   const [visible ,setVisible] = useState(false)
@@ -37,15 +36,15 @@ function Navbar(props) {
           alt="Search"
         />
         <input type="text" placeholder="Search News..." />
-         <KeyboardVoiceIcon 
-              onClick={handleClickToOpen}>
+         <KeyboardVoiceIcon sx={{ fontSize: "20px" }}
+              onClick={handleClickToOpen}>    
         Open Demo Dialog
       </KeyboardVoiceIcon>
       <Dialog open={open} onClose={handleToClose}>
         <DialogTitle>{"How are you?"}</DialogTitle>
         <DialogContent>
           <DialogContentText>
-            {/* <Mic/> */}
+            <Mic/>
           </DialogContentText>
         </DialogContent>
         <DialogActions>

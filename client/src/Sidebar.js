@@ -13,7 +13,7 @@ function Sidebar() {
       </div>
       <div className='lang'>
         <div className='langChoose'>
-        <p>Change Language</p>
+        <p>Choose Language</p>
         <select className='selectLang'>
           <option>English(India)</option>
           <option>Hindi(India)</option>
