@@ -19,7 +19,7 @@ function News(props) {
         <div className="newsDiv">
           <div className="newsMain">
             <h1>{props.title}</h1>
-            <p className="date">{props.date} &#9679; {props.category} &#9679; {props.source}</p>
+            <p className="date">{props.date} &#9679; {props.category} &#9679; <br></br>{props.source}</p>
             <p className="newsContent">{props.content}
               </p>
           </div>
@@ -46,7 +46,7 @@ function News(props) {
             </div>
             </div>
           <div className="readMore">
-            <p>Read More at <a className="linkSrc" href="https://timesofindia.indiatimes.com/world/south-asia/sri-lanka-pm-mahinda-rajapaksas-residence-set-on-fire-in-kurunegala/articleshow/91450247.cms">The Times of India</a></p>
+            <p>Read More <a className="linkSrc" href={props.additionalUrl}>Here</a></p>
           </div>
         </div>
         <div className="newsImage">
