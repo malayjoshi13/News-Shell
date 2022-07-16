@@ -16,11 +16,14 @@ function Navbar(props) {
       visible?setVisible(false):setVisible(true)
     }
     const [open, setOpen] = useState(false);
-  
+    const [inputText, setInputText] = useState('');
   const handleClickToOpen = () => {
     setOpen(true);
   };
-  
+  const handleSearch = (e) => {
+    setInputText(e.target.value)
+    props.searchWords(inputText)
+  }
   const handleToClose = () => {
     setOpen(false);
   };
@@ -35,7 +38,7 @@ function Navbar(props) {
           src="https://img.icons8.com/ios-glyphs/30/000000/search--v1.png"
           alt="Search"
         />
-        <input type="text" placeholder="Search News..." />
+        <input type="text" placeholder="Search News..." onChange={handleSearch}/>
          <KeyboardVoiceIcon sx={{ fontSize: "20px" }}
               onClick={handleClickToOpen}>    
         Open Demo Dialog
