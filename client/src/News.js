@@ -7,6 +7,8 @@ import ShareIcon from '@mui/icons-material/Share';
 import VolumeUpIcon from '@mui/icons-material/VolumeUp';
 import { Link } from "react-router-dom";
 import { useState } from "react";
+
+import img from "../src/newsDefault.png"
 // import { Box } from "@material-ui/core";
 function News(props) {
   const [simplified, setSimplified] = useState(false)
@@ -20,6 +22,8 @@ function News(props) {
           <div className="newsMain">
             <h1>{props.title}</h1>
             <p className="date">{props.date} &#9679; {props.category} &#9679; <br></br>{props.source}</p>
+            <p className="newsContent">{props.description}
+              </p>
             <p className="newsContent">{props.content}
               </p>
           </div>
@@ -50,7 +54,7 @@ function News(props) {
           </div>
         </div>
         <div className="newsImage">
-          <img src={props.image} alt="newsImage"></img>
+          <img src={props.image?props.image:img} alt="newsImage"></img>
         </div>
       </div>
     </div>

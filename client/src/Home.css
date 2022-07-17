@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .allContent {
@@ -10,6 +11,7 @@
   width: 100%;
   /* margin: 0 auto; */
   display: flex;
+  font-family: 'Open Sans', sans-serif;
 }
 .content{
   width: 80%;
