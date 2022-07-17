@@ -39,9 +39,12 @@ function Allnews(props) {
   }
   const getNews = async() => {
     try{
-    const Data = await fetch('http://127.0.0.1:8000/sumarize');
+    const Data = await fetch('https://newsapi.org/v2/top-headlines?country=in&apiKey=155c1629e9894008b694cc584a348551');
     const dataNews = await Data.json();
-    setNewsData(dataNews);
+    console.log(typeof(dataNews.articles));
+    console.log(dataNews);
+    console.log(dataNews.articles[0]);
+    setNewsData(dataNews.articles)
   }catch(e){
     console.log(e);
     }

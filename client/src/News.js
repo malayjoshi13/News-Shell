@@ -48,7 +48,7 @@ function News(props) {
             </div>
             </div>
           <div className="readMore">
-            <p>Read More at <a className="linkSrc" href="https://timesofindia.indiatimes.com/world/south-asia/sri-lanka-pm-mahinda-rajapaksas-residence-set-on-fire-in-kurunegala/articleshow/91450247.cms">The Times of India</a></p>
+            <p>Read More <a className="linkSrc" href={props.additionalUrl}>Here</a></p>
           </div>
         </div>
         <div className="newsImage">
