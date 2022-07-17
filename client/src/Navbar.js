@@ -8,8 +8,7 @@ import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
-// import Mic from './Mic';
-
+import Mic from './Mic';
 
 function Navbar(props) {
   const [visible ,setVisible] = useState(false)
@@ -17,11 +16,14 @@ function Navbar(props) {
       visible?setVisible(false):setVisible(true)
     }
     const [open, setOpen] = useState(false);
-  
+    const [inputText, setInputText] = useState('');
   const handleClickToOpen = () => {
     setOpen(true);
   };
-  
+  const handleSearch = (e) => {
+    setInputText(e.target.value)
+    props.searchWords(inputText)
+  }
   const handleToClose = () => {
     setOpen(false);
   };
@@ -36,16 +38,16 @@ function Navbar(props) {
           src="https://img.icons8.com/ios-glyphs/30/000000/search--v1.png"
           alt="Search"
         />
-        <input type="text" placeholder="Search News..." />
-         <KeyboardVoiceIcon 
-              onClick={handleClickToOpen}>
+        <input type="text" placeholder="Search News..." onChange={handleSearch}/>
+         <KeyboardVoiceIcon sx={{ fontSize: "20px" }}
+              onClick={handleClickToOpen}>    
         Open Demo Dialog
       </KeyboardVoiceIcon>
       <Dialog open={open} onClose={handleToClose}>
         <DialogTitle>{"How are you?"}</DialogTitle>
         <DialogContent>
           <DialogContentText>
-            {/* <Mic/> */}
+            <Mic/>
           </DialogContentText>
         </DialogContent>
         <DialogActions>

@@ -7,7 +7,9 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
 import Sidebar from "./Sidebar";
-function Content() {
+function Content(props) {
+  var seeLang = props.getLang;
+  var viewWords = props.getWords;
     const topics = [
         { id: 0, topic: "All News", category: "all" },
         { id: 7, topic: "Education", category: "Education" },
@@ -27,7 +29,9 @@ function Content() {
       const handleChange = (event , newValue) => {
           setValue(newValue);
          };
-      
+      // const seeNews = (e) =>{
+        // console.log(e)
+      // }
   return (
     <div className="content">
         <div className="navigate">
@@ -54,7 +58,9 @@ function Content() {
     </Box>
         </div>
         <Allnews 
-        topic={currTopic}
+        topic={currTopic} 
+        viewInput = {viewWords}
+        viewLang={seeLang}
         />
       </div>
   )

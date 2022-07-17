@@ -12,8 +12,10 @@ import img from "../src/newsDefault.png"
 // import { Box } from "@material-ui/core";
 function News(props) {
   const [simplified, setSimplified] = useState(false)
+  const [currStyle, setCurrStyle] = useState('newsContent')
   const simplify = ()=>{
-    simplified?setSimplified(false):setSimplified(true)
+    simplified?setSimplified(false):setSimplified(true);
+    simplified?setCurrStyle('newsContent'):setCurrStyle('simplifiedNews newsContent')
   }
   return (
     <div className="newsContainer">
@@ -28,7 +30,7 @@ function News(props) {
               </p>
           </div>
           <div className="actionDiv">
-            <button className="actionButtons" onClick={()=>{simplify();
+            <button className="actionButtons actionSimplify" onClick={()=>{simplify();
             props.simplifyText(simplified)}}>{simplified?<p>Original Text</p>:<p>Simplify It</p>}</button>
             <button className="actionButtons"><Link className="moreLink" to='/more'>View More</Link></button>
           </div>

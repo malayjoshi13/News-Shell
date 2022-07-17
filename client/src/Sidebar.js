@@ -3,7 +3,9 @@ import './Sidebar.css'
 import LanguageIcon from '@mui/icons-material/Language';
 import FlagIcon from '@mui/icons-material/Flag';
 import { NavLink } from 'react-router-dom';
-function Sidebar() {
+import { useState } from 'react';
+function Sidebar(props) {
+  const [currLanguge, setCurrLanguage] = useState('English');
   return (
     <div className='sideBar'>
       <div className="contNavigation">
@@ -13,10 +15,11 @@ function Sidebar() {
       </div>
       <div className='lang'>
         <div className='langChoose'>
-        <p>Change Language</p>
-        <select className='selectLang'>
-          <option>English(India)</option>
-          <option>Hindi(India)</option>
+        <p>Choose Language</p>
+        <select className='selectLang' onChange={e=>{setCurrLanguage(e.target.value);
+        props.checkLang(currLanguge)}}>
+          <option value="en">English(India)</option>
+          <option value="hi">Hindi(India)</option>
         </select>
         </div>
       </div>

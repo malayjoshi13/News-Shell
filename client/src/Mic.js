@@ -1,4 +1,4 @@
-import { ReactMic } from 'react-mic';
+// import { ReactMic } from 'react-mic';
 import React from 'react';
  
 export class Mic extends React.Component {
@@ -28,7 +28,7 @@ export class Mic extends React.Component {
   render() {
     return (
       <div>
-        <ReactMic
+        {/* <ReactMic
           record={this.state.record}
           className="sound-wave"
           onStop={this.onStop}
@@ -36,7 +36,7 @@ export class Mic extends React.Component {
           strokeColor="#000000"
           backgroundColor="#FF4081" />
         <button onClick={this.startRecording} type="button">Start</button>
-        <button onClick={this.stopRecording} type="button">Stop</button>
+        <button onClick={this.stopRecording} type="button">Stop</button> */}
       </div>
     );
   }
