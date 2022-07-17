@@ -1,0 +1,14 @@
+.noResults {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  margin: 0 auto;
+  height: 80vh;
+}
+.noResults p{
+    font-size: 30px;
+    font-weight: 700;
+    color: rgb(66, 135, 245);
+}
