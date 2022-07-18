@@ -29,6 +29,7 @@
   height: 70%;
   overflow: auto;
   overflow-x: hidden;
+  margin-bottom: 1.5%;
 }
 .date {
   font-size: 0.55rem;

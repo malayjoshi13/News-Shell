@@ -37,7 +37,7 @@ function Content(props) {
         <div className="navigate">
           <Box 
           sx={{ 
-            maxWidth: { xs: 240, sm: 481.59,md:718.39, lg:1000},
+            maxWidth: { xs: 350, sm: 581.59,md:618.39, lg:1000},
             bgcolor: 'background.paper' }}>
       <Tabs
         value={value}
