@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from "react";
 import Allnews from "./Allnews";
-import "./Home.css";
+import "./Content.css"
 import Navbar from "./Navbar";
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
@@ -11,8 +11,8 @@ function Content(props) {
   var seeLang = props.getLang;
   var viewWords = props.getWords;
     const topics = [
-        { id: 0, topic: "All News", category: "all" },
-        { id: 7, topic: "Education", category: "Education" },
+        { id: 0, topic: "Top Headlines", category: "top" },
+        { id: 7, topic: "Education", category: "science" },
         { id: 8, topic: "Business", category: "business" },
         { id: 2, topic: "World", category: "world" },
         { id: 1, topic: "Tech", category: "technology" },
@@ -21,7 +21,7 @@ function Content(props) {
         { id: 6, topic: "Politics", category: "politics" },
         { id: 5, topic: "Health", category: "health" },
         ];
-      const [currTopic, setCurrTopic] = useState("all");
+      const [currTopic, setCurrTopic] = useState("top");
       // const findTopic = (topic) => {
       //   setCurrTopic(topic);
       // };
@@ -46,6 +46,7 @@ function Content(props) {
         scrollButtons
         allowScrollButtonsMobile
         aria-label="scrollable force tabs example"
+        className='tabs'
         >
         {topics.map((e) => {
           return (
