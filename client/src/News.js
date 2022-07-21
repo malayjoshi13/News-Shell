@@ -7,7 +7,6 @@ import ShareIcon from '@mui/icons-material/Share';
 import VolumeUpIcon from '@mui/icons-material/VolumeUp';
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import DialogTitle  from '@mui/material/DialogContentText';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
@@ -38,7 +37,7 @@ function News(props) {
         <div className="newsDiv">
           <div className="newsMain">
             <h1>{props.title}</h1>
-            <p className="date">{props.date} &#9679; {props.category} &#9679; <br></br>{props.source}</p>
+            <p className="date">{props.date}  {props.category}  <br></br>{props.source}</p>
             <p className="newsContent">{props.description}
               </p>
             <p className="newsContent">{props.content}
@@ -67,9 +66,8 @@ function News(props) {
             </div>
             </div>
           <div className="readMore">
-            <p>Read More <button className="linkSrc" onClick={handleClickToOpen}>Here</button></p>
+            <p>Read More <a className="linkSrc" onClick={handleClickToOpen}>Here</a></p>
             <Dialog fullScreen open={open} onClose={handleToClose}>
-              {/* <DialogTitle>{"How are you?"}</DialogTitle> */}
               <DialogActions>
                 <Button onClick={handleToClose} 
                         color="primary" autoFocus>

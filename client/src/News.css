@@ -93,7 +93,7 @@ margin-right: 5px;
   width: 90%;
   margin: 7px 0;
   font-size: 0.78rem;
-  color: gray;
+  color: black;
 }
 .newsImage {
   width: 25%;
@@ -114,7 +114,7 @@ margin-right: 5px;
     font-size: 1.3rem;
   }
   .date {
-    font-size: 0.4rem;
+    font-size: 0.45rem;
   }
   .mainContainer {
     height: 88%;

@@ -38,7 +38,7 @@ function Navbar(props) {
           src="https://img.icons8.com/ios-glyphs/30/000000/search--v1.png"
           alt="Search"
         />
-        <input type="text" placeholder="Search News..." onChange={handleSearch}/>
+        <input type="text" placeholder="Search News..." onChange={handleSearch} style={{fontFamily : 'Product Sans'}}/>
          <KeyboardVoiceIcon sx={{ fontSize: "20px" }}
               onClick={handleClickToOpen}>    
         Open Demo Dialog
