@@ -7,6 +7,12 @@ import ShareIcon from '@mui/icons-material/Share';
 import VolumeUpIcon from '@mui/icons-material/VolumeUp';
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import DialogTitle  from '@mui/material/DialogContentText';
+import DialogContentText from '@mui/material/DialogContentText';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import Button from '@mui/material/Button';
+import Dialog from '@mui/material/Dialog';
 
 import img from "../src/newsDefault.png"
 // import { Box } from "@material-ui/core";
@@ -17,6 +23,15 @@ function News(props) {
     simplified?setSimplified(false):setSimplified(true);
     simplified?setCurrStyle('newsContent'):setCurrStyle('simplifiedNews newsContent')
   }
+  const [open, setOpen] = useState(false);
+  
+  const handleClickToOpen = () => {
+    setOpen(true);
+  };
+  
+  const handleToClose = () => {
+    setOpen(false);
+  };
   return (
     <div className="newsContainer">
       <div className="mainContainer">
@@ -32,7 +47,7 @@ function News(props) {
           <div className="actionDiv">
             <button className="actionButtons actionSimplify" onClick={()=>{simplify();
             props.simplifyText(simplified)}}>{simplified?<p>Original Text</p>:<p>Simplify It</p>}</button>
-            <button className="actionButtons"><Link className="moreLink" to='/more'>View More</Link></button>
+            <button className="actionButtons"><Link className="moreLink" to='/more'>In-Depth Analysis</Link></button>
           </div>
           <div className="actions">
             <div className="actionIcons">
@@ -52,7 +67,21 @@ function News(props) {
             </div>
             </div>
           <div className="readMore">
-            <p>Read More <a className="linkSrc" href={props.additionalUrl}>Here</a></p>
+            <p>Read More <button className="linkSrc" onClick={handleClickToOpen}>Here</button></p>
+            <Dialog open={open} onClose={handleToClose}>
+              <DialogTitle>{"How are you?"}</DialogTitle>
+              <DialogContent>
+                <DialogContentText>
+                  <iframe src={props.additionalUrl}></iframe>
+                </DialogContentText>
+              </DialogContent>
+              <DialogActions>
+                <Button onClick={handleToClose} 
+                        color="primary" autoFocus>
+                  Close
+                </Button>
+              </DialogActions>
+            </Dialog>
           </div>
         </div>
         <div className="newsImage">

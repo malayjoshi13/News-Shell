@@ -26,7 +26,7 @@ function Home() {
        <>
       <Navbar visible={handleMenu} searchWords={inputWords}/>
       <div className="allContent">
-       <Sidebar checkLang={checkingLang}></Sidebar>
+       <Sidebar checkLang={checkingLang} className='sidebar'></Sidebar>
        {show?<div className="show"><SidebarMobile></SidebarMobile></div>:''}
        <Switch>
          <Route exact path="/">

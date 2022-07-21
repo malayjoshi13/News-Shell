@@ -31,6 +31,10 @@
   overflow-x: hidden;
   margin-bottom: 1.5%;
 }
+Dialog{
+  width: 100vw;
+  height: 100vh;
+}
 .date {
   font-size: 0.55rem;
   color: gray;
