@@ -68,19 +68,19 @@ function News(props) {
             </div>
           <div className="readMore">
             <p>Read More <button className="linkSrc" onClick={handleClickToOpen}>Here</button></p>
-            <Dialog open={open} onClose={handleToClose}>
-              <DialogTitle>{"How are you?"}</DialogTitle>
-              <DialogContent>
-                <DialogContentText>
-                  <iframe src={props.additionalUrl}></iframe>
-                </DialogContentText>
-              </DialogContent>
+            <Dialog fullScreen open={open} onClose={handleToClose}>
+              {/* <DialogTitle>{"How are you?"}</DialogTitle> */}
               <DialogActions>
                 <Button onClick={handleToClose} 
                         color="primary" autoFocus>
                   Close
                 </Button>
               </DialogActions>
+              <DialogContent>
+                <DialogContentText>
+                  <iframe class="iframe" src={props.additionalUrl}></iframe>
+                </DialogContentText>
+              </DialogContent>
             </Dialog>
           </div>
         </div>
