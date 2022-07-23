@@ -10,8 +10,8 @@ import Sidebar from "./Sidebar";
 function Content(props) {
   var seeLang = props.getLang;
   var viewWords = props.getWords;
-    const topics = [
-        { id: 0, topic: "All News", category: "all" },
+  const topics = [
+  { id: 0, topic: "All News", category: "all" },
         { id: 7, topic: "Education", category: "Education" },
         { id: 8, topic: "Business", category: "business" },
         { id: 2, topic: "World", category: "world" },
@@ -21,17 +21,28 @@ function Content(props) {
         { id: 6, topic: "Politics", category: "politics" },
         { id: 5, topic: "Health", category: "health" },
         ];
+  const hindiTopics = [
+  { id: 0, topic: "सभी समाचार", category: "all" },
+        { id: 7, topic: "शिक्षा", category: "Education" },
+        { id: 8, topic: "व्यापार", category: "business" },
+        { id: 2, topic: "दुनिया", category: "world" },
+        { id: 1, topic: "तकनीक", category: "technology" },
+        { id: 3, topic: "मनोरंजन", category: "entertainment" },
+        { id: 4, topic: "खेल", category: "sports" },
+        { id: 6, topic: "राजनीति", category: "politics" },
+        { id: 5, topic: "स्वास्थ्य", category: "health" },
+        ];
       const [currTopic, setCurrTopic] = useState("all");
       // const findTopic = (topic) => {
       //   setCurrTopic(topic);
       // };
       const [value, setValue] = useState(0);
       const handleChange = (event , newValue) => {
-          setValue(newValue);
+        setValue(newValue);
          };
       // const seeNews = (e) =>{
         // console.log(e)
-      // }
+        // }
   return (
     <div className="content">
         <div className="navigate">
@@ -47,13 +58,19 @@ function Content(props) {
         allowScrollButtonsMobile
         aria-label="scrollable force tabs example"
         >
-        {topics.map((e) => {
+        {seeLang==='en'?topics.map((e) => {
           return (
             <Tab
             onClick={()=>{setCurrTopic(e.category)}}
                 label={e.topic}/>
               );
-            })}
+            }):hindiTopics.map((e) => {
+              return (
+                <Tab
+                onClick={()=>{setCurrTopic(e.category)}}
+                    label={e.topic}/>
+                  );
+                })}
         </Tabs>
     </Box>
         </div>

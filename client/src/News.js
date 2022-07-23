@@ -1,12 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./News.css";
 import StarOutlineIcon from '@mui/icons-material/StarOutline';
 import ForumRoundedIcon from '@mui/icons-material/ForumRounded';
 import BookmarkAddOutlinedIcon from '@mui/icons-material/BookmarkAddOutlined';
 import ShareIcon from '@mui/icons-material/Share';
 import VolumeUpIcon from '@mui/icons-material/VolumeUp';
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
+import axios from "axios";
 // import { Box } from "@material-ui/core";
 function News(props) {
   const [simplified, setSimplified] = useState(false)
@@ -15,6 +16,20 @@ function News(props) {
     simplified?setSimplified(false):setSimplified(true);
     simplified?setCurrStyle('newsContent'):setCurrStyle('simplifiedNews newsContent')
   }
+  let location = useLocation();
+  const handleClick=()=>{
+    sessionStorage.setItem('scrollPosition', window.scrollY);
+  }
+const handleScrollPosition = () => {
+  const scroPosition =  sessionStorage.getItem("scrollPosition");
+    if (parseInt(scroPosition)>0) {
+      window.scrollTo(0, parseInt(scroPosition));
+    }
+    sessionStorage.removeItem("scrollPosition");
+  };
+  useEffect(() => {
+    handleScrollPosition();
+  },[])
   return (
     <div className="newsContainer">
       <div className="mainContainer">
@@ -27,8 +42,8 @@ function News(props) {
           </div>
           <div className="actionDiv">
             <button className="actionButtons actionSimplify" onClick={()=>{simplify();
-            props.simplifyText(simplified)}}>{simplified?<p>Original Text</p>:<p>Simplify It</p>}</button>
-            <button className="actionButtons"><Link className="moreLink" to='/more'>View More</Link></button>
+            props.simplifyText(simplified)}}>{simplified?<p>{props.getPageLang=='en'?'Original Text':'मूल लेख'}</p>:<p>{props.getPageLang=='en'?'Simplify It':'इसे सरल करें'}</p>}</button>
+            <button className="actionButtons " onClick={handleClick}><Link className="moreLink" to={location.pathname==='/'?'news/more':'policies/more'}>{props.getPageLang=='en'?'View More':'और देखें'}</Link></button>
           </div>
           <div className="actions">
             <div className="actionIcons">
@@ -48,7 +63,7 @@ function News(props) {
             </div>
             </div>
           <div className="readMore">
-            <p>Read More <a className="linkSrc" href={props.additionalUrl}>Here</a></p>
+            <p>{props.getPageLang=='en'?'Read More': ''}<a className="linkSrc" href={props.additionalUrl}>{props.getPageLang=='en'?'Here': 'अधिक पढ़ें'}</a></p>
           </div>
         </div>
         <div className="newsImage">
