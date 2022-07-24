@@ -1,16 +1,26 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./More.css";
 import StarOutlineIcon from "@mui/icons-material/StarOutline";
 import ForumRoundedIcon from "@mui/icons-material/ForumRounded";
 import BookmarkAddOutlinedIcon from "@mui/icons-material/BookmarkAddOutlined";
 import ShareIcon from "@mui/icons-material/Share";
 import VolumeUpIcon from "@mui/icons-material/VolumeUp";
+import { useLocation } from "react-router-dom";
 import ArrowBackRoundedIcon from '@mui/icons-material/ArrowBackRounded';
 function More(props) {
+    useEffect(()=>{
+      window.scrollTo(0, 0);
+  })
+  const {pathname} = useLocation();
   return (
     <div className="moreNews">
       <div className="backButton">
-        <a href="/"><ArrowBackRoundedIcon className="backbtn" sx={{backgroundColor:"rgb(66, 135, 245)",
+        <a href=
+        {pathname==='/news/more'?
+        '/'
+        :'/policies'}
+        ><ArrowBackRoundedIcon 
+        className="backbtn" sx={{backgroundColor:"rgb(66, 135, 245)",
       color:"#fff",
       fontSize: "1.8rem",
       borderRadius:"5px"}}
@@ -53,13 +63,6 @@ A large number of protestors including the Inter-University Students Federation 
             The residence was set on fire because the Prime Minister tendered his resignation to President Gotabaya Rajapaksa and has called for the formation of an all-party interim government to handle the ongoing economic crisis in the country. The recession is attributed to foreign exchange shortages caused by a fall in tourism during the COVID-19 pandemic, as well as reckless economic policies, like the government’s move last year to ban chemical fertilizers in a bid to make Sri Lanka’s agriculture “100 per cent organic”.
 </p>
           </div>
-          {/* <div className="backButton">
-            <button className="backBtn">
-              <a className="backLink" href="/">
-                Back
-              </a>
-            </button>
-          </div> */}
         </div>
       </div>
     </div>

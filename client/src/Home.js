@@ -22,17 +22,26 @@ function Home() {
   const inputWords = (e) => {
     setCurrWords(e)
   }
-     return (
+  return (
        <>
-      <Navbar visible={handleMenu} searchWords={inputWords}/>
+      <Navbar visible={handleMenu} searchWords={inputWords} getSearchLang={currLang}/>
       <div className="allContent">
-       <Sidebar checkLang={checkingLang} className='sidebar'></Sidebar>
-       {show?<div className="show"><SidebarMobile></SidebarMobile></div>:''}
+       <Sidebar checkLang={checkingLang}></Sidebar>
+       {show?<div className="show"><SidebarMobile checkLang={checkingLang}></SidebarMobile></div>:''}
+
        <Switch>
          <Route exact path="/">
           <Content getLang={currLang} getWords={currWords}/>
          </Route>
-         <Route exact path="/more" component={More}></Route>
+         <Route exact path="/more">
+          <More />
+         </Route>
+         <Route exact path="/news/more">
+          <More />
+         </Route>
+         <Route exact path="/policies/more">
+          <More />
+         </Route>
          <Route exact path="/policies" component={Policies}></Route>
        </Switch>
       </div>
