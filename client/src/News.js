@@ -17,16 +17,11 @@ import img from "../src/newsDefault.png"
 // import { Box } from "@material-ui/core";
 function News(props) {
   const [simplified, setSimplified] = useState(false)
-  const [currStyle, setCurrStyle] = useState('newsContent')
-  const simplify = ()=>{
-    simplified?setSimplified(false):setSimplified(true);
-    simplified?setCurrStyle('newsContent'):setCurrStyle('simplifiedNews newsContent')
-  }
-
   let location = useLocation();
   const handleClick=()=>{
     sessionStorage.setItem('scrollPosition', window.scrollY);
   }
+  props.simplifyText(simplified)
 const handleScrollPosition = () => {
   const scroPosition =  sessionStorage.getItem("scrollPosition");
     if (parseInt(scroPosition)>0) {
@@ -57,12 +52,17 @@ const handleScrollPosition = () => {
             <p className="date">{props.date}  {props.category}  <br></br>{props.source}</p>
             <p className="newsContent">{props.description}
               </p>
+              {simplified?<div className="ribbon">
+              <p>Simplified News</p>
+              <p className="ribbonIn"></p>
+              </div>:''}
             <p className="newsContent">{props.content}
               </p>
           </div>
           <div className="actionDiv">
-            <button className="actionButtons actionSimplify" onClick={()=>{simplify();
-            props.simplifyText(simplified)}}>{simplified?<p>{props.getPageLang=='en'?'Original Text':'मूल लेख'}</p>:<p>{props.getPageLang=='en'?'Simplify It':'इसे सरल करें'}</p>}</button>
+            <button className="actionButtons actionSimplify" onClick={(e)=>{
+              simplified?setSimplified(false):setSimplified(true)
+            }}>{simplified?<p>{props.getPageLang=='en'?'Original Text':'मूल लेख'}</p>:<p>{props.getPageLang=='en'?'Simplify It':'इसे सरल करें'}</p>}</button>
             <button className="actionButtons " onClick={handleClick}><Link className="moreLink" to={location.pathname==='/'?'news/more':'policies/more'}>{props.getPageLang=='en'?'View More':'और देखें'}</Link></button>
 
           </div>

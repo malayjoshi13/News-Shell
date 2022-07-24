@@ -36,13 +36,14 @@ function Policies(props) {
       "Source": "indian express"
     },
     ]
+    const simplifyIt = ()=>{}
   return (
   <div className="policyContainer">
   <div className="policiesContainer">
     {policiesData.map((ele)=>{
       return <News title={ele.Headline} 
       date={ele.Date.Time}
-      category={ele.Domain} source={ele.Source} content={ele.Summarized_News} image={ele.Image_Url}/>
+      category={ele.Domain} source={ele.Source} content={ele.Summarized_News} image={ele.Image_Url} simplifyText={simplifyIt}/>
     })}
     </div>
     </div>
