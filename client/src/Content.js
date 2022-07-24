@@ -12,14 +12,14 @@ function Content(props) {
   var viewWords = props.getWords;
     const topics = [
         { id: 0, topic: "Top Headlines", category: "top" },
-        { id: 7, topic: "Education", category: "science" },
-        { id: 8, topic: "Business", category: "business" },
-        { id: 2, topic: "World", category: "world" },
-        { id: 1, topic: "Tech", category: "technology" },
+        { id: 1, topic: "Business", category: "business" },
+        { id: 2, topic: "Education", category: "science" },
         { id: 3, topic: "Entertainment", category: "entertainment" },
-        { id: 4, topic: "Sports", category: "sports" },
-        { id: 6, topic: "Politics", category: "politics" },
-        { id: 5, topic: "Health", category: "health" },
+        { id: 4, topic: "Health", category: "health" },
+        { id: 5, topic: "Politics", category: "politics" },
+        { id: 6, topic: "Sports", category: "sports" },
+        { id: 7, topic: "Tech", category: "technology" },
+        { id: 8, topic: "World", category: "world" },
         ];
       const [currTopic, setCurrTopic] = useState("top");
       // const findTopic = (topic) => {
