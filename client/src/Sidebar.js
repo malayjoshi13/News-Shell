@@ -8,6 +8,8 @@ function Sidebar(props) {
   const [currLanguge, setCurrLanguage] = useState('en');
   const [view, setView] = useState('News');
   const {pathname} = useLocation();
+  var language = JSON.parse(localStorage.getItem("currentLanguage"))
+  console.log(language)
   props.checkLang(currLanguge);
   return (
     <div className='sideBar'>
@@ -22,8 +24,9 @@ function Sidebar(props) {
         <div className='langChoose'>
         <p>{currLanguge=='en'?'Choose Language':
 'भाषा चुनें'}</p>
-        <select className='selectLang' onChange={e=>{setCurrLanguage(e.target.value);
-        // props.checkLang(currLanguge)
+        <select className='selectLang' onChange={e=>{
+        // localStorage.setItem("currentLanguage",JSON.stringify(e.target.value))
+        setCurrLanguage(e.target.value)
         }}>
           <option value="en">{currLanguge=='en'?'English(India)':'अंग्रेजी(भारत)'}</option>
           <option value="hi">{currLanguge=='en'?'Hindi(India)':'हिंदी(भारत)'}</option>

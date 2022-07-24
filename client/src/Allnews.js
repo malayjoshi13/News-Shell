@@ -16,7 +16,7 @@ function Allnews(props) {
 
   const getNews = async() => {
     try{
-    const Data = await fetch(`https://newsdata.io/api/1/news?apikey=pub_930227b420d2d7e030700ff57726ca453f8a&country=in&language=en&category=${props.topic}`,{
+    const Data = await fetch(`https://newsdata.io/api/1/news?apikey=pub_92827e3c0b4e56d836a972b6004297158542&country=in&language=en&category=${props.topic}`,{
       mode : 'cors'
     });
     console.log(Data);
@@ -36,6 +36,7 @@ function Allnews(props) {
     let News = await translate(JSON.stringify(newsData[i].content), "hi");
     let source = await translate(JSON.stringify(newsData[i].source_id), "hi");
     let newsDate = await translate(JSON.stringify(newsData[i].pubDate), "hi");
+    console.log(newsData[i])
     let obj1 = {
       Domain: text.replace(/['"]+/g, ''),
       Headline: head.replace(/['"]+/g, ''),
@@ -52,10 +53,10 @@ function Allnews(props) {
   setHindi(arrayNews)
   }
   console.log(hindi)  
-  useEffect(() => {
-    getNews();
-    translateText();
-  },[props.topic]);
+  useEffect(async() => {
+   await getNews();
+    await translateText();
+  },[props.topic, currLang]);
   // const totalData = props.topic==='all'?newsData:newsData.filter(element=>element.Domain===props.topic)
   const totalSearchData = newsData.filter(e=>e.title.toLowerCase().includes(props.viewInput.toLowerCase()))
   const simplifyIt = (e) => {
@@ -64,7 +65,7 @@ function Allnews(props) {
 
 return (<div className="container">
     {currLang=='en'?props.viewInput===''?newsData.map((ele)=>{
-      const totalNews = simplifiedNews?ele.content:newsSimplified;
+      const totalNews = simplifiedNews?newsSimplified:ele.content;
       return <News simplifyText={simplifyIt} title={ele.title} 
       date={ele.pubDate}
       category={ele.Domain} source={ele.source_id} content={totalNews} image={ele.image_url} additionalUrl={ele.link} getPageLang={currLang}

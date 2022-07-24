@@ -18,8 +18,10 @@
   display: none;
 }
 .search{
+  position: relative;
+  left: 6.5%;
   height:70%;
-  width:60%;
+  width:70%;
   border: 2px solid;
   border-radius: 10px;
   display: flex;
@@ -49,6 +51,11 @@ input{
   left: 20px;
   background-size: 90px;
 }
+@media only screen and (max-width:1025px) {
+  .search{
+    left: 10%;
+  }
+}
 @media only screen and (max-width:792px) {
   input{
     font-size: 14px;
@@ -56,9 +63,6 @@ input{
   }
   .Nav .search img{
     margin-left: 15px;
-  }
-  .search{
-    width: 50%;
   }
 .menu{
   display: block;
@@ -87,17 +91,20 @@ input{
     width: 15px;
   }
   .search{
-    width: 50%;
+    width: 67%;
+    left: 11%;
   }
 }
 @media only screen and (max-width:375px) {
 .search{
-  width: 40%;
+  width: 63%;
+  left: 13%;
 }
 }
 @media only screen and (max-width:325px) {
 .search{
   height: 60%;
-  width: 30%;
+  width: 60%;
+  left: 14.5%;
 }
 }
