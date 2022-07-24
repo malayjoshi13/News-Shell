@@ -63,6 +63,7 @@ useEffect(()=>{handleOpen()},[])
         />
         <input type="text" id="searchIt" placeholder={props.getSearchLang=='en'?'Search News...':'समाचार खोजें...'} onChange={handleSearch} />
          {listening?
+
          <KeyboardVoiceIcon sx={{ fontSize: "20px" }}
               // onClick={()=>{handleOpen();
               //   setListening(true)}} 

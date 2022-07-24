@@ -28,6 +28,7 @@ function Home() {
       <div className="allContent">
        <Sidebar checkLang={checkingLang}></Sidebar>
        {show?<div className="show"><SidebarMobile checkLang={checkingLang}></SidebarMobile></div>:''}
+
        <Switch>
          <Route exact path="/">
           <Content getLang={currLang} getWords={currWords}/>

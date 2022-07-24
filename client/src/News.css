@@ -29,10 +29,16 @@
   height: 70%;
   overflow: auto;
   overflow-x: hidden;
+  margin-bottom: 1.5%;
+}
+.iframe{
+  width: 85vw;
+  height: 90vh;
+  margin-left: 5%;
 }
 .date {
-  font-size: 0.55rem;
-  color: gray;
+  font-size: 0.7rem;
+  color: black;
   margin: 5px 0;
 }
 .actions {
@@ -87,8 +93,8 @@ margin-right: 5px;
 .newsContent {
   width: 90%;
   margin: 7px 0;
-  font-size: 0.75rem;
-  color: gray;
+  font-size: 0.9rem;
+  color: black;
 }
 .newsImage {
   width: 25%;
@@ -109,7 +115,7 @@ margin-right: 5px;
     font-size: 1.3rem;
   }
   .date {
-    font-size: 0.4rem;
+    font-size: 0.45rem;
   }
   .mainContainer {
     height: 88%;
@@ -125,7 +131,7 @@ margin-right: 5px;
 }
 @media only screen and (max-width: 792px) {
   .newsContent {
-    font-size: 0.45rem;
+    font-size: 0.75rem;
     width: 100%;
   }
   .actionSimplify{
@@ -141,7 +147,7 @@ margin-right: 5px;
   font-size: 1rem;
   }
   .date {
-    font-size: 0.3rem;
+    font-size: 0.45rem;
   }
   .mainContainer {
     height: 85%;
