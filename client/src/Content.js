@@ -10,9 +10,6 @@ import Sidebar from "./Sidebar";
 function Content(props) {
   var seeLang = props.getLang;
   var viewWords = props.getWords;
-  const topics = [
-  { id: 0, topic: "All News", category: "all" },
-        { id: 7, topic: "Education", category: "Education" },
     const topics = [
         { id: 0, topic: "Top Headlines", category: "top" },
         { id: 1, topic: "Business", category: "business" },
@@ -24,11 +21,10 @@ function Content(props) {
         { id: 7, topic: "Tech", category: "technology" },
         { id: 8, topic: "World", category: "world" },
         ];
-
   const hindiTopics = [
-  { id: 0, topic: "सभी समाचार", category: "all" },
-        { id: 7, topic: "शिक्षा", category: "Education" },
+        { id: 0, topic: "सभी समाचार", category: "top" },
         { id: 8, topic: "व्यापार", category: "business" },
+        { id: 7, topic: "शिक्षा", category: "science" },
         { id: 2, topic: "दुनिया", category: "world" },
         { id: 1, topic: "तकनीक", category: "technology" },
         { id: 3, topic: "मनोरंजन", category: "entertainment" },
@@ -36,7 +32,6 @@ function Content(props) {
         { id: 6, topic: "राजनीति", category: "politics" },
         { id: 5, topic: "स्वास्थ्य", category: "health" },
         ];
-      const [currTopic, setCurrTopic] = useState("all");
       const [currTopic, setCurrTopic] = useState("top");
       // const findTopic = (topic) => {
       //   setCurrTopic(topic);

@@ -84,8 +84,8 @@ const handleScrollPosition = () => {
             </div>
             </div>
           <div className="readMore">
-            <p>{props.getPageLang=='en'?'Read More': ''}<a className="linkSrc" href={props.additionalUrl}>{props.getPageLang=='en'?'Here': 'अधिक पढ़ें'}</a></p>
-            <p>Read More <a className="linkSrc" onClick={handleClickToOpen}>Here</a></p>
+            <p>{props.getPageLang=='en'?'Read More': ''}<a className="linkSrc" onClick={handleClickToOpen}>{props.getPageLang=='en'?'Here': 'अधिक पढ़ें'}</a></p>
+            {/* <p>Read More <a className="linkSrc" onClick={handleClickToOpen}>Here</a></p> */}
             <Dialog fullScreen open={open} onClose={handleToClose}>
               <DialogActions>
                 <Button onClick={handleToClose} 

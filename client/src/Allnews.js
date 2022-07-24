@@ -26,77 +26,61 @@ function Allnews(props) {
   }catch(e){
     console.log(e);
   }
-}
-const translateText=async()=>{
-  let i = 0
-  let arrayNews = [] 
-  while(i<newsData.length){
-  let text = await translate(JSON.stringify(newsData[i].Domain), "hi");
-  let head = await translate(JSON.stringify(newsData[i].Headline), "hi");
-  let News = await translate(JSON.stringify(newsData[i].Summarized_News), "hi");
-  let source = await translate(JSON.stringify(newsData[i].Source), "hi");
-  let newsDate = await translate(JSON.stringify(newsData[i].Date.Time), "hi");
-  let obj1 = {
-    Domain: text.replace(/['"]+/g, ''),
-    Headline: head.replace(/['"]+/g, ''),
-    News: News.replace(/['"]+/g, ''),
-    Source: source.replace(/['"]+/g, ''),
-    imageUrl: newsData[i].Image_Url,
-    newsDate: newsDate.replace(/['"]+/g, ''),
   }
-  arrayNews.push(obj1);
-  console.log(arrayNews)
-  i++
-}
-setHindi(arrayNews)
-}
-console.log(hindi)
-useEffect(() => {
-  getNews();
-  translateText();
-}
-,[newsData,props.topic]);
-const totalData = props.topic==='all'?newsData:newsData.filter(element=>element.Domain===props.topic)
-const totalSearchData = totalData.filter(e=>e.Headline.toLowerCase().includes(props.viewInput.toLowerCase()))
-const simplifyIt = (e) => {
-  setSimplifiedNews(e)
-}
-
-return (<div className="container">
-    {currLang=='en'?props.viewInput===''?totalData.map((ele)=>{
-      const totalNews = simplifiedNews?ele.Summarized_News:newsSimplified;
-      return <News simplifyText={simplifyIt} title={ele.Headline} 
-      date={ele.Date.Time}
-      category={ele.Domain} source={ele.Source} content={totalNews} image={ele.Image_Url} getPageLang={currLang}
-      />
-    }):
-    totalSearchData.length ? totalSearchData.map((ele)=>{
-      const totalSearchNews = simplifiedNews?ele.Summarized_News:newsSimplified;
-      return <News simplifyText={simplifyIt} title={ele.Headline} 
-      date={ele.Date.Time}
-      category={ele.Domain} source={ele.Source} content={totalSearchNews} image={ele.Image_Url} getPageLang={currLang}/>
-    }):<NoSearch/>:
-    hindi.map((ele)=>{
-      return <News simplifyText={simplifyIt} title={ele.Headline} date={ele.newsDate} category={ele.Domain} getPageLang={currLang} source={ele.Source} content={ele.News} image={ele.imageUrl} />
-      
+  const translateText=async()=>{
+    let i = 0
+    let arrayNews = [] 
+    while(i<newsData.length){
+    let text = await translate(JSON.stringify(newsData[i].Domain), "hi");
+    let head = await translate(JSON.stringify(newsData[i].title), "hi");
+    let News = await translate(JSON.stringify(newsData[i].content), "hi");
+    let source = await translate(JSON.stringify(newsData[i].source_id), "hi");
+    let newsDate = await translate(JSON.stringify(newsData[i].pubDate), "hi");
+    let obj1 = {
+      Domain: text.replace(/['"]+/g, ''),
+      Headline: head.replace(/['"]+/g, ''),
+      News: News.replace(/['"]+/g, ''),
+      Source: source.replace(/['"]+/g, ''),
+      imageUrl: newsData[i].Image_Url,
+      newsDate: newsDate.replace(/['"]+/g, ''),
+      additionalUrl:newsData[i].link
+    }
+    arrayNews.push(obj1);
+    console.log(arrayNews)
+    i++
+  }
+  setHindi(arrayNews)
+  }
+  console.log(hindi)  
+  useEffect(() => {
+    getNews();
+    translateText();
+  },[props.topic]);
+  // const totalData = props.topic==='all'?newsData:newsData.filter(element=>element.Domain===props.topic)
+  const totalSearchData = newsData.filter(e=>e.title.toLowerCase().includes(props.viewInput.toLowerCase()))
   const simplifyIt = (e) => {
     setSimplifiedNews(e)
   }
-  // console.log(totalSearchData.length);
-  return (<div className="container">
-    {newsData.map((ele)=>{
+
+return (<div className="container">
+    {currLang=='en'?props.viewInput===''?newsData.map((ele)=>{
+      const totalNews = simplifiedNews?ele.content:newsSimplified;
       return <News simplifyText={simplifyIt} title={ele.title} 
       date={ele.pubDate}
-      category={ele.Domain} 
-      source={ele.source_id} 
-      // content={simplifiedNews?ele.Summarized_News:newsSimplified} 
-      description = {ele.description}
-      content = {ele.content}
-      image={ele.image_url}
-      additionalUrl = {ele.link}/>
-
-    })}
-    </div>
+      category={ele.Domain} source={ele.source_id} content={totalNews} image={ele.image_url} additionalUrl={ele.link} getPageLang={currLang}
+      />
+    }):
+    totalSearchData.length ? totalSearchData.map((ele)=>{
+      const totalSearchNews = simplifiedNews?ele.content:newsSimplified;
+      return <News simplifyText={simplifyIt} title={ele.title} 
+      date={ele.pubDate}
+      category={ele.Domain} source={ele.source_id} content={totalSearchNews} image={ele.image_url} additionalUrl={ele.link} getPageLang={currLang}/>
+    }):<NoSearch/>:
+    hindi.map((ele)=>{
+      return <News simplifyText={simplifyIt} title={ele.Headline} date={ele.newsDate} category={ele.Domain} getPageLang={currLang} additionalUrl={ele.additionalUrl} source={ele.Source} content={ele.News} image={ele.imageUrl} />
+    })
+  }
+  </div>
   );
 }
 
