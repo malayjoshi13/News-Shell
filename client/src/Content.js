@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useState } from "react";
 import Allnews from "./Allnews";
 import "./Content.css"
@@ -32,14 +32,35 @@ function Content(props) {
         { id: 6, topic: "राजनीति", category: "politics" },
         { id: 5, topic: "स्वास्थ्य", category: "health" },
         ];
-      const [currTopic, setCurrTopic] = useState("top");
+        // useEffect(()=>{
+        //   localStorage.removeItem("currentLanguage")
+        // })
+      // const [currTopic, setCurrTopic] = useState("top");
+      let gettingTopic = sessionStorage.getItem('currentTopic')
+      let getcurrTopic = gettingTopic==null?'top':gettingTopic
+      const [currTopic, setCurrTopic] = useState(getcurrTopic);
       // const findTopic = (topic) => {
-      //   setCurrTopic(topic);
-      // };
-      const [value, setValue] = useState(0);
+        //   setCurrTopic(topic);
+        // };
+        useEffect(()=>{
+          topics.map((ele)=>{
+            if(currTopic===ele.category){
+              setValue(parseInt(ele.id))
+            }
+          })
+        },[currTopic])
+        const [value, setValue] = useState(0);
+        
+        // const [currTab, setCurrTab] = useState(getcurrTopic);
+      let currentTopic = sessionStorage.getItem("currentTopic")
+      // topics.map((e)=>{
+      //     if(e.category==currentTopic){
+      //       setValue(e.id)
+      //     }
+      //   })
       const handleChange = (event , newValue) => {
         setValue(newValue);
-         };
+      };
       // const seeNews = (e) =>{
         // console.log(e)
         // }
@@ -51,6 +72,7 @@ function Content(props) {
             maxWidth: { xs: 350, sm: 581.59,md:618.39, lg:1000},
             bgcolor: 'background.paper' }}>
       <Tabs
+        // value="BUSINESS"
         value={value}
         onChange={handleChange}
         variant="scrollable"
