@@ -11,6 +11,7 @@
     "mongoose": "^6.5.0",
     "node-fetch": "^3.2.9",
     "nodemon": "^2.0.19",
+    "python-shell": "^3.0.1",
     "translate": "^1.4.1",
     "uuid": "^8.3.2"
   }
