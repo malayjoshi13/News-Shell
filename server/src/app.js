@@ -9,6 +9,19 @@ const app = express();
 const port = process.env.PORT || 8000;
 const translate = require('translate')
 translate.engine = "google";
+const {PythonShell} = require('python-shell')
+const path = require('path')
+let options = {
+  scriptPath: path.join(__dirname),
+  args: ['value1'],
+  mode: 'text',
+  pythonOptions: ['-u'],
+}
+PythonShell.run("index.py", options, (err, res)=>{
+  if(err) console.log(err)
+  if(res) console.log(res)
+
+})
 app.all("/*", function (req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "X-Requested-With");
@@ -20,17 +33,17 @@ app.all("/*", function (req, res, next) {
 // pythonProcess.stdout.on('data', function(data) {
 //   console.log("ghgy");
 // });
-const data = require('./modelLoad')
-console.log("data here"+data.executePy());
-const py = async()=>{
-  try{
-    const ans = await data.executePy()
-    console.log(ans);
-  }catch(err) {console.log(err);}
-}
-py()
-console.log(typeof(data));
-console.log(Object.values(data))
+// const data = require('./modelLoad')
+// console.log("data here"+data.executePy());
+// const py = async()=>{
+  // try{
+  //   const ans = await data.executePy()
+  //   console.log(ans);
+  // }catch(err) {console.log(err);}
+// }
+// py()
+// console.log(typeof(data));
+// console.log(Object.values(data))
 var arrayNews = []
 const main = async() =>{
   let data = await dbConnect();

@@ -16,9 +16,10 @@ import torch
 from transformers import BertTokenizer, BertForMaskedLM
 # !pip install wordfreq
 from wordfreq import zipf_frequency
-from keras.preprocessing.sequence import pad_sequences
+from keras_preprocessing.sequence import pad_sequences
 import pickle
-
+import os
+print("hello")
 
 
 # Candidates generation using BERT and selection of best candidates based on Zipf values
@@ -28,7 +29,6 @@ bert_model = 'bert-large-uncased'
 tokenizer = BertTokenizer.from_pretrained(bert_model)
 model = BertForMaskedLM.from_pretrained(bert_model)
 model.eval()
-
 # Generate candidates
 def get_bert_candidates(input_text, list_cwi_predictions, numb_predictions_displayed = 10):
   list_candidates_bert = []
@@ -63,9 +63,10 @@ def cleaner(word):
   word = re.sub('[^a-zA-Z]', ' ', word)
   return word.lower().strip()
 
-
-filename = 'word_to_index.pkl'
-word2index = pickle.load(open(filename, 'rb'))
+# filename = 'word_to_index.pkl'
+print(os.getcwd())
+filename = open("word_to_index.pkl",'rb')
+word2index = pickle.load(filename)
 sent_max_length = 103
 
 # Function to create the padded sequence
@@ -110,14 +111,17 @@ def simplify_it(input_text):
 
   return new_text
 
-#------------------------------------------------------------------------------------------------------- 
+# ------------------------------------------------------------------------------------------------------- 
 
 # driver code
 if __name__ == "__main__":
   input_text = 'Pro-democracy parties, which had hoped to ride widespread discontent to big gains, saw the yearlong delay as an attempt to thwart them.'
   simplified_text = simplify_it(input_text)
   print("Original text: ", input_text )
+  print("Original text: input_text" )
   print("Simplified text:", simplified_text)
   print(simplified_text)
-  # sys.stdout.flush()
+  sys.stdout.flush()
+  print("Hello World")
   sys.exit(simplified_text)
+print("Hello")
