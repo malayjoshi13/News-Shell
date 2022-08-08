@@ -27,23 +27,6 @@ app.all("/*", function (req, res, next) {
   res.header("Access-Control-Allow-Headers", "X-Requested-With");
   next();
 });
-// const {spawn} = require("child_process")
-// const pythonProcess = spawn('python',["index.py"], {shell: true}); 
-// console.log(pythonProcess.stdout.on);
-// pythonProcess.stdout.on('data', function(data) {
-//   console.log("ghgy");
-// });
-// const data = require('./modelLoad')
-// console.log("data here"+data.executePy());
-// const py = async()=>{
-  // try{
-  //   const ans = await data.executePy()
-  //   console.log(ans);
-  // }catch(err) {console.log(err);}
-// }
-// py()
-// console.log(typeof(data));
-// console.log(Object.values(data))
 var arrayNews = []
 const main = async() =>{
   let data = await dbConnect();
