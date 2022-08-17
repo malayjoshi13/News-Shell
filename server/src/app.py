@@ -1,7 +1,7 @@
 from flask import Flask, request, jsonify
 # from transformers import AutoModelForSeq2SeqLM
-# from Simplify import simplify_it
-from indexSumarize import summarize
+from Simplify import simplify_it
+from indexSumarize import summarize, hundred_word_summary
 
 from flask_pymongo import PyMongo
 import requests
@@ -11,17 +11,62 @@ import json
 app = Flask(__name__)
 # app.config["MONGO_URI"] = "mongodb://TeamNewshell:eovXKgDbc4ZEtNzs@cluster0.wf0qiyf.mongodb.net/NewshellTest?retryWrites=true&w=majority"
 # mongo = PyMongo(app)
+
 @app.route('/get', methods=['GET', 'POST'])
 def index():
-    global simplified
+    global final_output, data
     if request.method == 'POST':
         data = request.get_json()
-        print(data['news'])
-        simplified = summarize(data['news'])
+        input_text = data['news']
+        chunk_start = 0 
+        max_length = 200
+        chunk_end = max_length 
+        inputs_batch_dict = {} 
+        batch_id = 0
+        print(input_text)
+        while chunk_start <= len(input_text): 
+            inputs_batch = input_text[chunk_start:chunk_end] # get batch of 250 tokens 
+            inputs_batch_dict[batch_id] = inputs_batch 
+            batch_id += 1 #counts for batch number
+            chunk_start += max_length
+            chunk_end += max_length
+    
+  #--------------------------------------------------------------------------
+
+  # apply function on each batch 
+        for batch_id in inputs_batch_dict:
+            input = inputs_batch_dict[batch_id]
+            print("This is first batch", input)
+        # if fn == "simplify":
+            output = summarize(input)
+            print("this is output", output)
+        # elif fn == "summzarize":
+        #   output = fn(input)
+        # elif fn == "context":
+        #     output = fn(input)
+
+            inputs_batch_dict[batch_id] = output
+
+  #--------------------------------------------------------------------------
+
+  # adding results of all batches
+        final_output = ""
+        for batch_id in inputs_batch_dict:
+            print("this is final", inputs_batch_dict[batch_id])
+            final_output += inputs_batch_dict[batch_id]
+
+        print(final_output)
+        # data = request.get_json()
+        # print(data['news'])
+        # simplified = summarize(data['news'])
+        # print(simplified)
+        hundred = hundred_word_summary(final_output)
+        print("This is hundred",hundred)
+        data['news'] = hundred
+        simplified = simplify_it(hundred)
         print(simplified)
-    # raw_text = """The Indian Space Research Organisation (ISRO) on Sunday said the satellites onboard its maiden Small Satellite Launch Vehicle “are no longer usable” after the SSLV-D1 placed them in an elliptical orbit instead of a circular one. The space agency said a committee would analyse and make recommendations into Sunday’s episode and with the implementation."""
-    # if request.method == 'GET':
-    return simplified
+        data['simplify'] = simplified
+    return data
 
 if __name__ == "__main__":
     app.run(port=5000, debug=True)
