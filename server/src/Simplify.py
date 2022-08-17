@@ -108,15 +108,16 @@ def simplify_it(input_text):
       if w.isalpha():
         tuples_word_zipf.append((w, zipf_frequency(w, 'en')))
     tuples_word_zipf = sorted(tuples_word_zipf, key = lambda x: x[1], reverse=True)
-    new_text = re.sub(word_to_replace, tuples_word_zipf[0][0], new_text) 
-
+    try:
+      new_text = re.sub(word_to_replace, tuples_word_zipf[0][0], new_text)
+    except:
+      continue
   return new_text
 
 # ------------------------------------------------------------------------------------------------------- 
 
 # driver code
-if __name__ == "__main__":
-  # input_text = 'Pro-democracy parties, which had hoped to ride widespread discontent to big gains, saw the yearlong delay as an attempt to thwart them.'
+# if __name__ == "__main__":
   # simplified_text = simplify_it(input_text)
   # print(input_text)
 #   print("Original text: ", input_text )
@@ -124,6 +125,6 @@ if __name__ == "__main__":
   # print("Simplified text:", simplified_text)
 #   print(simplified_text)
 #   sys.stdout.flush()
-  print("Hello World")
+  # print("Hello World")
 #   sys.exit(simplified_text)
 # print("Hello")
