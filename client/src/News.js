@@ -18,15 +18,7 @@ import img from "../src/newsDefault.png"
 // import { Box } from "@material-ui/core";
 function News(props) {
   const [simplified, setSimplified] = useState(false)
-  const { speak } = useSpeechSynthesis(
-    {
-      default: true,
-      lang: "en-AU",
-      localService: true,
-      name: "Karen",
-      voiceURI: "Karen"
-    }
-  );
+  const { speak , voices} = useSpeechSynthesis();
   let location = useLocation();
   const handleClick=()=>{
     sessionStorage.setItem('scrollPosition', window.scrollY);
@@ -52,14 +44,24 @@ const handleScrollPosition = () => {
   const handleToClose = () => {
     setOpen(false);
   };
-  const a = (alpha) =>{
+  const speakEnglish = (title,content) =>{
     if(speaking == false){
       setSpeaking(true)
-      speak({ text: alpha });
+      console.log(voices[1])
+      speak({ text: title , voice : voices[1] });
+      speak({ text: content , voice : voices[1] });
       setSpeaking(false)
     }
   }
-
+  const speakHindi = (title,content) =>{
+    if(speaking == false){
+      setSpeaking(true)
+      console.log(voices)
+      speak({ text: title , voice : voices[10] });
+      speak({ text: content , voice : voices[10] });
+      setSpeaking(false)
+    }
+  }
   return (
     <div className="newsContainer">
       <div className="mainContainer">
@@ -97,7 +99,7 @@ const handleScrollPosition = () => {
             <ShareIcon fontSize="small xs-10"></ShareIcon>
             </div>
             <div className="actionIcons">
-            <VolumeUpIcon fontSize="small xs-10" onClick={a.bind(this,props.content)}></VolumeUpIcon>
+            <VolumeUpIcon fontSize="small xs-10" onClick={props.getPageLang ==='en'?speakEnglish.bind(this,props.title,props.content):speakHindi.bind(this,props.title,props.content)}></VolumeUpIcon>
             </div>
             </div>
           <div className="readMore">
