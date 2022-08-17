@@ -12,11 +12,21 @@ import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
+import { useSpeechSynthesis } from 'react-speech-kit';
 
 import img from "../src/newsDefault.png"
 // import { Box } from "@material-ui/core";
 function News(props) {
   const [simplified, setSimplified] = useState(false)
+  const { speak } = useSpeechSynthesis(
+    {
+      default: true,
+      lang: "en-AU",
+      localService: true,
+      name: "Karen",
+      voiceURI: "Karen"
+    }
+  );
   let location = useLocation();
   const handleClick=()=>{
     sessionStorage.setItem('scrollPosition', window.scrollY);
@@ -34,7 +44,7 @@ const handleScrollPosition = () => {
   },[])
 
   const [open, setOpen] = useState(false);
-  
+  const [speaking, setSpeaking] = useState(false);
   const handleClickToOpen = () => {
     setOpen(true);
   };
@@ -42,6 +52,13 @@ const handleScrollPosition = () => {
   const handleToClose = () => {
     setOpen(false);
   };
+  const a = (alpha) =>{
+    if(speaking == false){
+      setSpeaking(true)
+      speak({ text: alpha });
+      setSpeaking(false)
+    }
+  }
 
   return (
     <div className="newsContainer">
@@ -80,7 +97,7 @@ const handleScrollPosition = () => {
             <ShareIcon fontSize="small xs-10"></ShareIcon>
             </div>
             <div className="actionIcons">
-            <VolumeUpIcon fontSize="small xs-10"></VolumeUpIcon>
+            <VolumeUpIcon fontSize="small xs-10" onClick={a.bind(this,props.content)}></VolumeUpIcon>
             </div>
             </div>
           <div className="readMore">
