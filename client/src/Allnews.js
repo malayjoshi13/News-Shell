@@ -24,9 +24,9 @@ function Allnews(props) {
       mode : 'cors'
     });
     console.log(sessionStorage.getItem("currentTopic"))
-    console.log(Data);
+    // console.log(Data);
     const dataNews = await Data.json();
-    console.log(dataNews);
+    // console.log(dataNews);
     setNewsData(dataNews.results)
   }catch(e){
     console.log(e);

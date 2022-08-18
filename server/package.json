@@ -1,7 +1,7 @@
 {
   "scripts": {
     "start": "node src/app.js",
-    "serve": "nodemon app.js"
+    "serve": "(cd src & pip install -r requirements.txt & cd ..) & nodemon app.js "
   },
   "dependencies": {
     "axios": "^0.27.2",
