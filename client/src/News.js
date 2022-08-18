@@ -12,11 +12,13 @@ import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
+import { useSpeechSynthesis } from 'react-speech-kit';
 
 import img from "../src/newsDefault.png"
 // import { Box } from "@material-ui/core";
 function News(props) {
   const [simplified, setSimplified] = useState(false)
+  const { speak , voices} = useSpeechSynthesis();
   let location = useLocation();
   const handleClick=()=>{
     sessionStorage.setItem('scrollPosition', window.scrollY);
@@ -34,7 +36,7 @@ const handleScrollPosition = () => {
   },[])
 
   const [open, setOpen] = useState(false);
-  
+  const [speaking, setSpeaking] = useState(false);
   const handleClickToOpen = () => {
     setOpen(true);
   };
@@ -42,7 +44,24 @@ const handleScrollPosition = () => {
   const handleToClose = () => {
     setOpen(false);
   };
-
+  const speakEnglish = (title,content) =>{
+    if(speaking == false){
+      setSpeaking(true)
+      console.log(voices[1])
+      speak({ text: title , voice : voices[1] });
+      speak({ text: content , voice : voices[1] });
+      setSpeaking(false)
+    }
+  }
+  const speakHindi = (title,content) =>{
+    if(speaking == false){
+      setSpeaking(true)
+      console.log(voices)
+      speak({ text: title , voice : voices[10] });
+      speak({ text: content , voice : voices[10] });
+      setSpeaking(false)
+    }
+  }
   return (
     <div className="newsContainer">
       <div className="mainContainer">
@@ -80,7 +99,7 @@ const handleScrollPosition = () => {
             <ShareIcon fontSize="small xs-10"></ShareIcon>
             </div>
             <div className="actionIcons">
-            <VolumeUpIcon fontSize="small xs-10"></VolumeUpIcon>
+            <VolumeUpIcon fontSize="small xs-10" onClick={props.getPageLang ==='en'?speakEnglish.bind(this,props.title,props.content):speakHindi.bind(this,props.title,props.content)}></VolumeUpIcon>
             </div>
             </div>
           <div className="readMore">
