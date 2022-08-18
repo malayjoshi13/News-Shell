@@ -23,14 +23,14 @@ function Content(props) {
         ];
   const hindiTopics = [
         { id: 0, topic: "सभी समाचार", category: "top" },
-        { id: 8, topic: "व्यापार", category: "business" },
-        { id: 7, topic: "शिक्षा", category: "science" },
-        { id: 2, topic: "दुनिया", category: "world" },
-        { id: 1, topic: "तकनीक", category: "technology" },
+        { id: 1, topic: "व्यापार", category: "business" },
+        { id: 2, topic: "शिक्षा", category: "science" },
         { id: 3, topic: "मनोरंजन", category: "entertainment" },
-        { id: 4, topic: "खेल", category: "sports" },
-        { id: 6, topic: "राजनीति", category: "politics" },
-        { id: 5, topic: "स्वास्थ्य", category: "health" },
+        { id: 4, topic: "स्वास्थ्य", category: "health" },
+        { id: 5, topic: "राजनीति", category: "politics" },
+        { id: 6, topic: "खेल", category: "sports" },
+        { id: 7, topic: "तकनीक", category: "technology" },
+        { id: 8, topic: "दुनिया", category: "world" },
         ];
         // useEffect(()=>{
         //   localStorage.removeItem("currentLanguage")

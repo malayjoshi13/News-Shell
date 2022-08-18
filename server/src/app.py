@@ -31,20 +31,14 @@ def index():
             chunk_start += max_length
             chunk_end += max_length
     
-  #--------------------------------------------------------------------------
+#   #--------------------------------------------------------------------------
 
   # apply function on each batch 
         for batch_id in inputs_batch_dict:
             input = inputs_batch_dict[batch_id]
             print("This is first batch", input)
-        # if fn == "simplify":
             output = summarize(input)
             print("this is output", output)
-        # elif fn == "summzarize":
-        #   output = fn(input)
-        # elif fn == "context":
-        #     output = fn(input)
-
             inputs_batch_dict[batch_id] = output
 
   #--------------------------------------------------------------------------
@@ -56,16 +50,13 @@ def index():
             final_output += inputs_batch_dict[batch_id]
 
         print(final_output)
-        # data = request.get_json()
-        # print(data['news'])
-        # simplified = summarize(data['news'])
-        # print(simplified)
         hundred = hundred_word_summary(final_output)
         print("This is hundred",hundred)
         data['news'] = hundred
         simplified = simplify_it(hundred)
         print(simplified)
         data['simplify'] = simplified
+        # print(data, input_text)
     return data
 
 if __name__ == "__main__":

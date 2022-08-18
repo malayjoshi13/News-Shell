@@ -30,28 +30,38 @@ const getNewData = async () => {
   return sumNews;
 };
 
-const main = async () => {
-  let data = await dbConnect();
-  data = await data.find().toArray();
-  console.log(data)
-  // try {
-    for (i = 0; i < data.length; i++) {
-      console.log(i, data.length);
-      let text = data[i].category!=""?await translate(JSON.stringify(data[i].category), "hi"):data[i].category;
-      let head = data[i].head!=""?await translate(JSON.stringify(data[i].heading), "hi"):data[i].head;
-      let News = data[i].News!=""?await translate(JSON.stringify(data[i].news), "hi"):data[i].News;
-      let source = data[i].source!=""?await translate(JSON.stringify(data[i].source), "hi"):data[i].source;
-      let newsDate = data[i].newsDate!=""?await translate(JSON.stringify(data[i].newsDate), "hi"):data[i].newsDate;
-      console.log(text, head, News, source, newsDate);
+const main = async (data) => {
+  // let data = await dbConnect();
+  // data = await data.find().toArray();
+  var gettingIt
+  if(data){
+  
+  
+  
+    // try {
+      // for (i = 0; i < data.length; i++) {
+      // await sleep(10000)
+      let text = await translate(data.category, "hi");
+      let head = await translate(data.heading, "hi");
+      let News = await translate(data.news, "hi");
+      let source = await translate(data.source, "hi");
+      let newsDate = await translate(data.newsDate, "hi");
+      let simplified = await translate(data.simplify, "hi");
+      // console.log(text, head, News, source, newsDate);
+      // console.log(text, head, News, source, newsDate)
       let obj1 = {
-        category: text.replace(/['"]+/g, ""),
-        heading: head.replace(/['"]+/g, ""),
-        news: News.replace(/['"]+/g, ""),
-        source: source.replace(/['"]+/g, ""),
-        imageUrl: data[i].imageUrl,
-        newsDate: newsDate.replace(/['"]+/g, ""),
-        newsUrl: data[i].newsUrl,
+        category: text,
+        heading: head,
+        news: News,
+        source: source,
+        imageUrl: data.imageUrl,
+        newsDate: newsDate,
+        newsUrl: data.newsUrl,
+        simplified: simplified
       };
+      console.log(obj1)
+      gettingIt = obj1;
+    }
       // let hindiNewsData = new hindiNewsSchema({
       //   heading: obj1.heading,
       //   news: obj1.news,
@@ -62,17 +72,18 @@ const main = async () => {
       //   category: obj1.category[0],
       // });
       // await hindiNewsData.save();
-    }
-    // arrayNews.push(obj1);
-    i++;
-  // } catch {
-    // (e) => {
+      // arrayNews.push(obj1);
+    // }catch{(e) => {
       // console.log(e);
       // console.log("Hello");
     // };
+    return gettingIt
+  }
+    // i++;
   // }
-};
-main()
+// };
+// }
+// main()
 var a = "0";
 const getPosts = async () => {
   const Topics = [
@@ -121,57 +132,58 @@ const getPosts = async () => {
   const getCount = () => {
   count = count + "1";
 };
-main();
+// main();
 const sleep = async(milli) =>{
   return new Promise(resolve=>setTimeout(resolve, milli))
 }
-// const sendIt = async(req, res)=>{
-//   const getData = await getNewData()
-//   let datafrom = await dbConnect()
-//   console.log(datafrom)
-//     for(i=0;i<getData.length;i++){
-//     var data = getData[1]
-//     console.log(data)
-//     const options={
-//       method: 'POST',
-//       headers:{
-//         'Content-Type': 'application/json'
-//       },
-//       body: JSON.stringify(data)
-//     }
-//     request.post('http://127.0.0.1:5000/get', options)
-//     await sleep(900000)
-//     request('http://127.0.0.1:5000/get',async function (error, response, body) {
-//       console.error('error:', error); 
-//       console.log('statusCode:', response && response.statusCode);
-//     const bodyy = JSON.parse(body)
-//       console.log(bodyy)
+const sendIt = async(req, res)=>{
+  const getData = await getNewData()
+  let datafrom = await dbConnect()
+  // console.log(getData)
+  for(i=0;i<getData.length;i++){
+    if(!getData[i].simplified){
+      let data = getData[i]
+      await axios.post("http://127.0.0.1:5000/get",data)
+      // console.log(options.body)
+      // request.post('http://127.0.0.1:5000/get', options)
+      // await sleep(300000)
+      axios.get("http://127.0.0.1:5000/get").then(async(data)=>{
+        console.log(data)
+        console.log(data.news)
+        let hindiNews = await main(data)
+              console.log("This is hindinews"+hindiNews)
+              await datafrom.updateOne({heading:data.heading},{
+                  $set: {
+                      news: data.news,
+                      hheading:hindiNews.heading,
+                      hnews:hindiNews.news,
+                      hsource: hindiNews.source,
+                      simplify: data.simplify,
+                      simplified: true,
+                      hsimplified: hindiNews.simplified
+                    }
+                    
+                  }
+                  )
+      }).catch((e)=>{console.log(e)})
+      // request('http://127.0.0.1:5000/get',async function (error, response, body) {
+      // console.error('error:', error);
+      // console.log('statusCode:', response && response.statusCode);
+    // let bodyy = JSON.parse(body)
+      // console.log(body)
 //       console.log(bodyy.news)
 //       console.log(bodyy.heading)
-//       await datafrom.updateOne({heading:bodyy.heading},{
-//           $set: {
-//               news: bodyy.news,
-//               simplify: bodyy.simplify
-//             }
           
-//         })
-//         })
-//       }
-//     }
-      // sendIt()
+        // })
+      }}
+    }
+    // }
+      sendIt()
       app.get("/", async(req, res) => {
-        // request('http://127.0.0.1:5000/get',async function (error, response, body) {
-          // console.error('error:', error); // Print the error
-          // console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
-          // console.log(body);
-          // const bodyy = JSON.parse(body)
-          // console.log(bodyy.news)
-        })
-    // request('http://127.0.0.1:5000/get',async function (error, response, body) {
-    //   console.error('error:', error); // Print the error
-    //   console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
-    //   console.log(body)
-    // });
+        const getData = await getNewData();
+        res.send(getData)
+        
+      })
   // })
 // });
 setInterval(() => {

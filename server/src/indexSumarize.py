@@ -12,9 +12,9 @@ import sys
 import json
 import ast
 # -------------------------------------------------------------------------------------------------------------------------------
+model = AutoModelForSeq2SeqLM.from_pretrained('facebook/bart-large-cnn') # google/pegasus-newsroom or facebook/bart-large-cnn or Yale-LILY/brio-cnndm-cased
+tokenizer = AutoTokenizer.from_pretrained('facebook/bart-large-cnn') 
 def summarize(raw_text):
-  model = AutoModelForSeq2SeqLM.from_pretrained('facebook/bart-large-cnn') # google/pegasus-newsroom or facebook/bart-large-cnn or Yale-LILY/brio-cnndm-cased
-  tokenizer = AutoTokenizer.from_pretrained('facebook/bart-large-cnn') 
 
   # tokenize without truncation, thus will accept input of raw news of any length for summarization (will not truncate news if of 
   # length more than 1024 for bart and 512 for pegasus)
@@ -26,37 +26,8 @@ def summarize(raw_text):
 
   # get batches 200 tokens. It is useful as summarizer can't reach last parts of raw input news. Thus splitting news into small-small batches will
   # enable summarizer to run through every part of the raw input news 
-  chunk_start = 0 
-  max_length = 200
-  chunk_end = max_length 
-  inputs_batch_dict = {} 
-  batch_id = 0
-  while chunk_start <= len(inputs_no_trunc[0]): 
-    inputs_batch = inputs_no_trunc[0][chunk_start:chunk_end] # get batch of 200 tokens 
-    inputs_batch = torch.unsqueeze(inputs_batch, 0)
-    inputs_batch_dict[batch_id] = inputs_batch 
-
-    batch_id += 1 #counts for batch number
-    chunk_start += max_length
-    chunk_end += max_length
-    
-  #--------------------------------------------------------------------------
-
-  # generate a summary on each batch 
-  for batch_id in inputs_batch_dict:
-    input_tokens = inputs_batch_dict[batch_id]
-    encoded_summary = model.generate(input_tokens, num_beams = 4, length_penalty = 2.0, max_length = 250, min_length = 90, no_repeat_ngram_size = 3)
-    decoded_summary = tokenizer.decode(encoded_summary.squeeze(), skip_special_tokens=True)
-    inputs_batch_dict[batch_id] = decoded_summary
-
-  #--------------------------------------------------------------------------
-
-  # adding summaries of all batches
-  decoded_summary = ""
-  summary_batch_lst = [] 
-  for batch_id in inputs_batch_dict:
-    decoded_summary += inputs_batch_dict[batch_id]
-
+  encoded_summary = model.generate(inputs_no_trunc, num_beams = 4, length_penalty = 2.0, max_length = 250, min_length = 90, no_repeat_ngram_size = 3)
+  decoded_summary = tokenizer.decode(encoded_summary.squeeze(), skip_special_tokens=True)
   return decoded_summary
 
 
@@ -146,4 +117,3 @@ def hundred_word_summary(decoded_summary):
   # final_summary = hundred_word_summary(summary)
   # print(final_summary)
   # print(len(final_summary.split()))
-  
