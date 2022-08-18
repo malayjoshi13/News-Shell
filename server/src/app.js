@@ -18,37 +18,24 @@ app.all("/*", function (req, res, next) {
   res.header("Access-Control-Allow-Headers", "X-Requested-With");
   next();
 });
-var arrayNews = [];
-var gettingNews = [];
 const getNewData = async () => {
   let sumNews = [];
   let data = await dbConnect();
   data = await data.find().toArray();
   data.map((e) => sumNews.push(e));
-  // console.log(sumNews)
   console.log(sumNews.length);
   return sumNews;
 };
 
 const main = async (data) => {
-  // let data = await dbConnect();
-  // data = await data.find().toArray();
   var gettingIt
   if(data){
-  
-  
-  
-    // try {
-      // for (i = 0; i < data.length; i++) {
-      // await sleep(10000)
-      let text = await translate(data.category, "hi");
+    let text = await translate(data.category, "hi");
       let head = await translate(data.heading, "hi");
       let News = await translate(data.news, "hi");
       let source = await translate(data.source, "hi");
       let newsDate = await translate(data.newsDate, "hi");
       let simplified = await translate(data.simplify, "hi");
-      // console.log(text, head, News, source, newsDate);
-      // console.log(text, head, News, source, newsDate)
       let obj1 = {
         category: text,
         heading: head,
@@ -62,28 +49,9 @@ const main = async (data) => {
       console.log(obj1)
       gettingIt = obj1;
     }
-      // let hindiNewsData = new hindiNewsSchema({
-      //   heading: obj1.heading,
-      //   news: obj1.news,
-      //   newsUrl: obj1.newsUrl,
-      //   newsDate: obj1.newsDate,
-      //   imageUrl: obj1.imageUrl,
-      //   source: obj1.source,
-      //   category: obj1.category[0],
-      // });
-      // await hindiNewsData.save();
-      // arrayNews.push(obj1);
-    // }catch{(e) => {
-      // console.log(e);
-      // console.log("Hello");
-    // };
     return gettingIt
   }
-    // i++;
-  // }
-// };
-// }
-// main()
+  
 var a = "0";
 const getPosts = async () => {
   const Topics = [
@@ -132,33 +100,26 @@ const getPosts = async () => {
   const getCount = () => {
   count = count + "1";
 };
-// main();
-const sleep = async(milli) =>{
-  return new Promise(resolve=>setTimeout(resolve, milli))
-}
 const sendIt = async(req, res)=>{
   const getData = await getNewData()
   let datafrom = await dbConnect()
-  // console.log(getData)
   for(i=0;i<getData.length;i++){
     if(!getData[i].simplified){
       let data = getData[i]
       await axios.post("http://127.0.0.1:5000/get",data)
-      // console.log(options.body)
-      // request.post('http://127.0.0.1:5000/get', options)
-      // await sleep(300000)
       axios.get("http://127.0.0.1:5000/get").then(async(data)=>{
-        console.log(data)
-        console.log(data.news)
-        let hindiNews = await main(data)
-              console.log("This is hindinews"+hindiNews)
-              await datafrom.updateOne({heading:data.heading},{
+        console.log("get Function"+data)
+        console.log("Get data"+data.data)
+        // console.log("Get data"+data.data.news)
+        let hindiNews = await main(data.data)
+              // console.log("This is hindinews"+hindiNews)
+              await datafrom.updateOne({heading:data.data.heading},{
                   $set: {
-                      news: data.news,
+                      news: data.data.news,
                       hheading:hindiNews.heading,
                       hnews:hindiNews.news,
                       hsource: hindiNews.source,
-                      simplify: data.simplify,
+                      simplify: data.data.simplify,
                       simplified: true,
                       hsimplified: hindiNews.simplified
                     }
@@ -166,26 +127,14 @@ const sendIt = async(req, res)=>{
                   }
                   )
       }).catch((e)=>{console.log(e)})
-      // request('http://127.0.0.1:5000/get',async function (error, response, body) {
-      // console.error('error:', error);
-      // console.log('statusCode:', response && response.statusCode);
-    // let bodyy = JSON.parse(body)
-      // console.log(body)
-//       console.log(bodyy.news)
-//       console.log(bodyy.heading)
-          
-        // })
       }}
     }
-    // }
       sendIt()
       app.get("/", async(req, res) => {
         const getData = await getNewData();
         res.send(getData)
         
       })
-  // })
-// });
 setInterval(() => {
   getPosts();
   getCount();
