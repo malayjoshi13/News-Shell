@@ -15,6 +15,11 @@
     width: 25%;
 }
 
+@media only screen and (min-width:792px) {
+    .slideBar{
+        display: none;
+    }
+}
 @media only screen and (max-width:645px) {
     .slideBar{
         width: 25vw;
