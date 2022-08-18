@@ -10,7 +10,7 @@ function SidebarMobile(props) {
   const {pathname} = useLocation();
   props.checkLang(currLanguge);
   return (
-    <div className='sideBar'>
+    <div className='slideBar'>
       <div className="contNavigation">
       <NavLink exact to='/' isActive={()=>['/','/news/more'].includes(pathname)} activeClassName='chooseContent2' className='chooseCont'><div onClick={()=>{setView('News');props.checkView(view)}}>
         <div className='chooseContent'><LanguageIcon></LanguageIcon>{currLanguge=='en'?'News':
