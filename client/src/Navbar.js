@@ -6,7 +6,7 @@ const SpeechRecognition = window.SpeechRecognition||window.webkitSpeechRecogniti
 const mic = new SpeechRecognition()
 mic.continuous = true;
 mic.interimResults = true;
-mic.lang = 'en-US';
+mic.lang = 'en-US'||'hi-IN';
 function Navbar(props) {
   const [visible ,setVisible] = useState(false)
   const [listening ,setListening] = useState(false)

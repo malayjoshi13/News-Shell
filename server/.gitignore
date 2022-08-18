@@ -3,3 +3,4 @@ package-lock.json
 .env
 model_CWI_full.h5
 *.h5
+env

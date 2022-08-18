@@ -8,7 +8,8 @@ const newsSchema = new mongoose.Schema(
         },
         news:{
             type: String,
-            required: true
+            required: true,
+            maxLength: 2960
         },
         newsUrl:{
             type: String,
