@@ -60,5 +60,5 @@ const newsSchema = new mongoose.Schema(
         }
     }
 )
-const NewsModel = new mongoose.model("new", newsSchema)
+const NewsModel = new mongoose.model("neww", newsSchema)
 module.exports = NewsModel
