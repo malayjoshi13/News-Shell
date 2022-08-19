@@ -1,6 +1,7 @@
 .newsContainer {
   /* height: 14.659rem; */
-  height: 23.9rem;
+  /* height: 23.9rem; */
+  height: 25.9rem;
   width: 100%;
   margin: 10px auto;
   border-radius: 10px;
@@ -26,7 +27,8 @@
 }
 .newsMain {
   width: 100%;
-  height: 70%;
+  /* height: 70%; */
+  height: 75%;
   overflow: auto;
   overflow-x: hidden;
   margin-bottom: 1.5%;
@@ -40,7 +42,8 @@ padding-top: 2px;
 padding-bottom: 2px;
 padding-left: 5px;
 color: #fff;
-font-size: 12px;
+/* font-size: 12px; */
+font-size: 0.875rem;
 background-color: rgb(66, 135, 245);
 }
 .ribbonIn{
@@ -58,7 +61,8 @@ background-color: rgb(66, 135, 245);
   margin-left: 5%;
 }
 .date {
-  font-size: 0.7rem;
+  /* font-size: 0.7rem; */
+  font-size: 0.875rem;
   color: black;
   margin: 5px 0;
 }
@@ -76,7 +80,7 @@ background-color: rgb(66, 135, 245);
 }
 .actionDiv{
   width: auto;
-  height: 10%;
+  height: 5%;
 }
 .moreLink{
   text-decoration: none;
@@ -86,15 +90,17 @@ background-color: rgb(66, 135, 245);
   background-color: blue;
 } */
 .readMore{
-  height: 10%;
-  font-size: 12px;
+  height: 5%;
+  /* font-size: 12px; */
+  font-size: 0.875rem;
   color: #4c4e52;
 }
 .actionButtons{
 background-color: rgb(66, 135, 245);
 border: none;
 border-radius: 4px;
-font-size: 12.5px;
+/* font-size: 12.5px; */
+font-size: 0.875rem;
 color: white;
 padding: 5px 12px;
 margin-right: 5px;
@@ -114,7 +120,8 @@ margin-right: 5px;
 .newsContent {
   width: 90%;
   margin: 7px 0;
-  font-size: 0.9rem;
+  /* font-size: 0.9rem; */
+  font-size: 1rem;
   color: black;
 }
 .newsImage {
@@ -128,22 +135,24 @@ margin-right: 5px;
   height: 100%;
   object-fit: cover;
 }
-@media only screen and (max-width: 1035px) {
-  .newsContent {
-    font-size: 0.63rem;
+/* @media only screen and (max-width: 1310px) { */
+@media only screen and (max-width: 1024px) {
+  .newsContainer {
+    /* font-size: 0.63rem; */
+    height: 30.5rem;
   }
   .newsDiv h1 {
-    font-size: 1.3rem;
+    /* font-size: 1.3rem; */
   }
   .ribbon{
-    font-size: 10px;
+    /* font-size: 10px; */
     width: 100px;
   }
   .ribbonIn{
     width: 18px;
   }
   .date {
-    font-size: 0.45rem;
+    /* font-size: 0.45rem; */
   }
   .mainContainer {
     height: 88%;
@@ -159,40 +168,45 @@ margin-right: 5px;
 }
 @media only screen and (max-width: 792px) {
   .newsContent {
-    font-size: 0.75rem;
+    /* font-size: 0.75rem; */
     width: 100%;
   }
   .actionSimplify{
-    width: 80px;
+    /* width: 80px; */
   }
   .ribbon{
-    font-size: 8px;
+    /* font-size: 8px; */
     width: 90px;
   }
   .ribbonIn{
     width: 14px;
   }
   .actionButtons, .readMore{
-    font-size: 8px;
+    /* font-size: 8px; */
 }
 .actions{
   height: 15%;
 }
 .newsDiv h1 {
-  font-size: 1rem;
+  /* font-size: 1rem; */
   }
   .date {
-    font-size: 0.45rem;
+    /* font-size: 0.45rem; */
   }
   .mainContainer {
     height: 85%;
   }
   .newsContainer {
-    height: 13.659rem;
+    /* height: 13.659rem; */
   }
   .actions img {
     height: 10px;
     width: 10px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .newsMain{
+    height: 70%;
   }
 }
 @media only screen and (max-width: 425px) {
@@ -201,32 +215,45 @@ margin-right: 5px;
     height: 90%;
     width: 90%;
   }
+  .newsMain{
+    height: 78%;
+  }
   .actions{
     height: 10%;
   }
   .newsContent {
-    font-size: 0.5rem;
+    /* font-size: 0.5rem; */
   }
   .actions{
     width: 40%;
   }
   .newsDiv {
     width: 100%;
+    height: 70%;
   }
   .newsDiv h1{
     margin-top: 5px;
   }
-
+  
   .newsImage {
     width: 100%;
+    height: 30%;
   }
   .newsContainer {
-    height: 35.659rem;
+    height: 50.659rem;
     margin: 10px auto;
   }
 }
 @media only screen and (max-width: 375px) {
   .mainContainer {
     height: 93%;
+  }
+  .newsContainer {
+    height: 57.659rem;
+  }
+}
+@media only screen and (max-width: 320px) {
+  .newsContainer {
+    height: 67.659rem;
   }
 }

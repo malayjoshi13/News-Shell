@@ -5,8 +5,11 @@
     transition: all 2s;
     z-index: 14;
 }
+.chooseCont{
+    margin: 20px 0;
+}
 .chooseCont, .lang, .selectLang{
-    font-size: 12px;
+    font-size: 0.875rem;
 }
 .selectLang{
     width: 100%;
@@ -22,14 +25,14 @@
 }
 @media only screen and (max-width:645px) {
     .slideBar{
-        width: 25vw;
+        width: 35vw;
     }
     .chooseCont, .lang, .selectLang{
-        font-size: 10px;
+        /* font-size: 10px; */
     }
 }
 @media only screen and (max-width:425px) {
     .lang, .selectLang{
-        font-size: 8px;
+        /* font-size: 8px; */
     }
 }
