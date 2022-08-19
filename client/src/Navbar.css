@@ -38,7 +38,7 @@ input{
   width:90%;
   margin-left:25px;
   border:0;
-  font-size: 17px;
+  font-size: 0.875rem;
   outline: none;
 }
 .icon{
@@ -58,7 +58,6 @@ input{
 }
 @media only screen and (max-width:792px) {
   input{
-    font-size: 14px;
     margin-left: 20px;
   }
   .Nav .search img{
@@ -82,7 +81,6 @@ input{
     left: 60px;
   }
   input{
-    font-size: 10px;
     margin-left: 5px;
   }
   .Nav .search img{

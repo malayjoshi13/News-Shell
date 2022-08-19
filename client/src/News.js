@@ -12,18 +12,15 @@ import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
-import { useSpeechSynthesis } from 'react-speech-kit';
 
 import img from "../src/newsDefault.png"
 // import { Box } from "@material-ui/core";
 function News(props) {
   const [simplified, setSimplified] = useState(false)
-  const { speak , voices} = useSpeechSynthesis();
   let location = useLocation();
   const handleClick=()=>{
     sessionStorage.setItem('scrollPosition', window.scrollY);
   }
-  props.simplifyText(simplified)
 const handleScrollPosition = () => {
   const scroPosition =  sessionStorage.getItem("scrollPosition");
     if (parseInt(scroPosition)>0) {
@@ -45,44 +42,64 @@ const handleScrollPosition = () => {
     setOpen(false);
   };
   const speakEnglish = (title,content) =>{
-    if(speaking == false){
-      setSpeaking(true)
-      console.log(voices[1])
-      speak({ text: title , voice : voices[1] });
-      speak({ text: content , voice : voices[1] });
-      setSpeaking(false)
-    }
+    let msg = new SpeechSynthesisUtterance()
+    let msg1 = new SpeechSynthesisUtterance()
+    console.log("Chala kya");
+    let voices = window.speechSynthesis.getVoices();
+    msg.text = title
+    msg.volume = 1
+    msg.rate=1
+    msg.pitch=1
+    msg.lang = "en-US"
+    msg.voice = voices[0]  
+    msg1.text = content 
+    msg1.voice = voices[0]   
+    console.log(msg);
+    console.log(msg1);
+    window.speechSynthesis.speak(msg)
+    window.speechSynthesis.speak(msg1)
   }
   const speakHindi = (title,content) =>{
-    if(speaking == false){
-      setSpeaking(true)
-      console.log(voices)
-      speak({ text: title , voice : voices[10] });
-      speak({ text: content , voice : voices[10] });
-      setSpeaking(false)
-    }
+    let msg = new SpeechSynthesisUtterance()
+    let msg1 = new SpeechSynthesisUtterance()
+    console.log("Chala kya");
+    msg.text = title
+    msg.lang = "hi-IN"
+    msg.volume = 1
+    msg.rate=1
+    msg.pitch=1
+    msg1.text = content
+    msg1.lang = "hi-IN"
+    console.log(msg);
+    console.log(msg1);
+    // console.log(window.speechSynthesis.getVoices());
+    let voices = window.speechSynthesis.getVoices();
+    window.speechSynthesis.speak(msg)
+    window.speechSynthesis.speak(msg1)
   }
+  let news = props.content;
+  let simplifiedNews = props.simplify
   return (
     <div className="newsContainer">
       <div className="mainContainer">
         <div className="newsDiv">
           <div className="newsMain">
             <h1>{props.title}</h1>
-            <p className="date">{props.date}  {props.category}  <br></br>{props.source}</p>
+            <p className="date">{props.date}<br></br>{props.source}</p>
             <p className="newsContent">{props.description}
               </p>
               {simplified?<div className="ribbon">
               <p>Simplified News</p>
               <p className="ribbonIn"></p>
               </div>:''}
-            <p className="newsContent">{props.content}
+            <p className="newsContent">{simplified?simplifiedNews:news}
               </p>
           </div>
           <div className="actionDiv">
             <button className="actionButtons actionSimplify" onClick={(e)=>{
               simplified?setSimplified(false):setSimplified(true)
             }}>{simplified?<p>{props.getPageLang=='en'?'Original Text':'मूल लेख'}</p>:<p>{props.getPageLang=='en'?'Simplify It':'इसे सरल करें'}</p>}</button>
-            <button className="actionButtons " onClick={handleClick}><Link className="moreLink" to={location.pathname==='/'?'news/more':'policies/more'}>{props.getPageLang=='en'?'View More':'और देखें'}</Link></button>
+            <button className="actionButtons " onClick={handleClick}><Link className="moreLink" to={location.pathname==='/'?'news/more':'policies/more'}>{props.getPageLang=='en'?'Analyse It':'विश्लेषण करें'}</Link></button>
 
           </div>
           <div className="actions">
@@ -103,7 +120,7 @@ const handleScrollPosition = () => {
             </div>
             </div>
           <div className="readMore">
-            <p>{props.getPageLang=='en'?'Read More': ''}<a className="linkSrc" onClick={handleClickToOpen}>{props.getPageLang=='en'?'Here': 'अधिक पढ़ें'}</a></p>
+            <p><a className="linkSrc" onClick={handleClickToOpen}>{props.getPageLang=='en'?'Get Full Context': 'पूरा संदर्भ प्राप्त करें'}</a></p>
             {/* <p>Read More <a className="linkSrc" onClick={handleClickToOpen}>Here</a></p> */}
             <Dialog fullScreen open={open} onClose={handleToClose}>
               <DialogActions>

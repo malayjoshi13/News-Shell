@@ -31,8 +31,8 @@ function Sidebar(props) {
         sessionStorage.setItem("currentLanguage",e.target.value)
         setCurrLanguage(e.target.value)
         }}>
-          <option value="en">{language=='en'||language==null?'English(India)':'अंग्रेजी(भारत)'}</option>
-          <option value="hi">{language=='en'||language==null?'Hindi(India)':'हिंदी(भारत)'}</option>
+          <option value="en">English(India)</option>
+          <option value="hi">हिंदी(भारत)</option>
         </select>
         </div>
       </div>

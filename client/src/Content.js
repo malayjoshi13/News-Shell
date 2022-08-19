@@ -85,13 +85,13 @@ function Content(props) {
           return (
             <Tab
             onClick={()=>{setCurrTopic(e.category)}}
-                label={e.topic}/>
+            label={<span className="topicTabs">{e.topic}</span>}/>
               );
             }):hindiTopics.map((e) => {
               return (
                 <Tab
                 onClick={()=>{setCurrTopic(e.category)}}
-                    label={e.topic}/>
+                    label={<span className="topicTabs">{e.topic}</span>}/>
                   );
                 })}
         </Tabs>
