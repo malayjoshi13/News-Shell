@@ -100,36 +100,37 @@ const getPosts = async () => {
   const getCount = () => {
   count = count + "1";
 };
-// const sendIt = async(req, res)=>{
-//   const getData = await getNewData()
-//   let datafrom = await dbConnect()
-//   for(i=0;i<getData.length;i++){
-//     if(!getData[i].simplified){
-//       let data = getData[i]
-//       await axios.post("http://127.0.0.1:5000/get",data)
-//       axios.get("http://127.0.0.1:5000/get").then(async(data)=>{
-//         console.log("get Function"+data)
-//         console.log("Get data"+data.data)
-//         // console.log("Get data"+data.data.news)
-//         let hindiNews = await main(data.data)
-//               // console.log("This is hindinews"+hindiNews)
-//               await datafrom.updateOne({heading:data.data.heading},{
-//                   $set: {
-//                       news: data.data.news,
-//                       hheading:hindiNews.heading,
-//                       hnews:hindiNews.news,
-//                       hsource: hindiNews.source,
-//                       simplify: data.data.simplify,
-//                       simplified: true,
-//                       hsimplified: hindiNews.simplified
-//                     }
+const sendIt = async(req, res)=>{
+  const getData = await getNewData()
+  let datafrom = await dbConnect()
+  for(i=0;i<getData.length;i++){
+    if(!getData[i].simplified){
+      let data = getData[i]
+      await axios.post("http://127.0.0.1:5000/get",data)
+      axios.get("http://127.0.0.1:5000/get").then(async(data)=>{
+        console.log("get Function"+data)
+        console.log("Get data"+data.data)
+        // console.log("Get data"+data.data.news)
+        let hindiNews = await main(data.data)
+              // console.log("This is hindinews"+hindiNews)
+              await datafrom.updateOne({heading:data.data.heading},{
+                  $set: {
+                      news: data.data.news,
+                      hheading:hindiNews.heading,
+                      hnews:hindiNews.news,
+                      hsource: hindiNews.source,
+                      simplify: data.data.simplify,
+                      simplified: true,
+                      hsimplified: hindiNews.simplified,
+                      hnewsDate: hindiNews.newsDate,
+                    }
                     
-//                   }
-//                   )
-//       }).catch((e)=>{console.log(e)})
-//       }}
-//     }
-//       sendIt()
+                  }
+                  )
+      }).catch((e)=>{console.log(e)})
+      }}
+    }
+      sendIt()
       app.get("/", async(req, res) => {
         const getData = await getNewData();
         res.send(getData)

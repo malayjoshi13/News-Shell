@@ -23,7 +23,6 @@ function News(props) {
   const handleClick=()=>{
     sessionStorage.setItem('scrollPosition', window.scrollY);
   }
-  props.simplifyText(simplified)
 const handleScrollPosition = () => {
   const scroPosition =  sessionStorage.getItem("scrollPosition");
     if (parseInt(scroPosition)>0) {
@@ -62,20 +61,22 @@ const handleScrollPosition = () => {
       setSpeaking(false)
     }
   }
+  let news = props.content;
+  let simplifiedNews = props.simplify
   return (
     <div className="newsContainer">
       <div className="mainContainer">
         <div className="newsDiv">
           <div className="newsMain">
             <h1>{props.title}</h1>
-            <p className="date">{props.date}  {props.category}  <br></br>{props.source}</p>
+            <p className="date">{props.date}<br></br>{props.source}</p>
             <p className="newsContent">{props.description}
               </p>
               {simplified?<div className="ribbon">
               <p>Simplified News</p>
               <p className="ribbonIn"></p>
               </div>:''}
-            <p className="newsContent">{props.content}
+            <p className="newsContent">{simplified?simplifiedNews:news}
               </p>
           </div>
           <div className="actionDiv">
