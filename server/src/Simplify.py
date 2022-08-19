@@ -1,7 +1,5 @@
-import sys
 import numpy as np
 import re
-# ! pip install nltk
 import nltk
 nltk.download('punkt')
 nltk.download('stopwords')
@@ -10,26 +8,21 @@ from nltk.corpus import stopwords
 from nltk import pos_tag
 nltk.download('averaged_perceptron_tagger')
 from keras.models import load_model
-# !pip install torch
 import torch
-# !pip install transformers
 from transformers import BertTokenizer, BertForMaskedLM
-# !pip install wordfreq
 from wordfreq import zipf_frequency
 from keras_preprocessing.sequence import pad_sequences
 import pickle
-import os
-print("hello")
-
 
 # Candidates generation using BERT and selection of best candidates based on Zipf values
 
-# Load the BERT  model for masked languge
-bert_model = 'bert-large-uncased'
+# 1. Load the BERT  model for masked languge
+bert_model = 'bert-large-cased-local'
 tokenizer = BertTokenizer.from_pretrained(bert_model)
 model = BertForMaskedLM.from_pretrained(bert_model)
 model.eval()
-# Generate candidates
+
+# 2. Generate candidates
 def get_bert_candidates(input_text, list_cwi_predictions, numb_predictions_displayed = 10):
   list_candidates_bert = []
   for word,pred  in zip(input_text.split(), list_cwi_predictions):
@@ -55,7 +48,7 @@ def get_bert_candidates(input_text, list_cwi_predictions, numb_predictions_displ
 
 # Functions that will help prepare raw data before getting simplified
 
-# Function to clean the data and remove non characters symbols
+# 1. Function to clean the data and remove non characters symbols
 stop_words_ = set(stopwords.words('english'))
 def cleaner(word):
   word = re.sub(r'((http|https)\:\/\/)?[a-zA-Z0-9\.\/\?\:@\-_=#]+\.([a-zA-Z]){2,6}([a-zA-Z0-9\.\&\/\?\:@\-_=#])*', '', word, flags=re.MULTILINE)
@@ -63,13 +56,11 @@ def cleaner(word):
   word = re.sub('[^a-zA-Z]', ' ', word)
   return word.lower().strip()
 
-# filename = 'word_to_index.pkl'
-print(os.getcwd())
 filename = open("word_to_index.pkl",'rb')
 word2index = pickle.load(filename)
 sent_max_length = 103
 
-# Function to create the padded sequence
+# 2. Function to create the padded sequence
 def process_input(input_text):
   input_text = cleaner(input_text)
   clean_text = []
@@ -85,6 +76,7 @@ def process_input(input_text):
   input_padded = pad_sequences(maxlen=sent_max_length, sequences=[input_token], padding="post", value=0)
   return input_padded, index_list, len(clean_text)  
 
+# 3.
 def complete_missing_word(pred_binary, index_list, len_list):
   list_cwi_predictions = list(pred_binary[0][:len_list])
   for i in index_list:
@@ -92,6 +84,8 @@ def complete_missing_word(pred_binary, index_list, len_list):
   return list_cwi_predictions  
 
 model_cwi = load_model("model_CWI_full.h5")
+
+#-------------------------------------------------------------------------------------------------------
 
 # Main function that simplifies text
 def simplify_it(input_text):
@@ -116,15 +110,9 @@ def simplify_it(input_text):
 
 # ------------------------------------------------------------------------------------------------------- 
 
-# driver code
+# # driver code
 # if __name__ == "__main__":
-  # simplified_text = simplify_it(input_text)
-  # print(input_text)
-#   print("Original text: ", input_text )
-#   print("Original text: input_text" )
-  # print("Simplified text:", simplified_text)
-#   print(simplified_text)
-#   sys.stdout.flush()
-  # print("Hello World")
-#   sys.exit(simplified_text)
-# print("Hello")
+#   input_text = "Yet, Sherman’s bedfellows are far from strange. Art, despite its religious and magical origins, very soon became a commercial venture. From bourgeois patrons funding art they barely understood in order to share their protegee’s prestige, to museum curators stage-managing the cult of artists in order to enhance the market value of museum holdings, entrepreneurs have found validation and profit in big-name art. Speculators, thieves, and promoters long ago created and fed a market where cultural icons could be traded like commodities."
+#   simplified_text = simplify_it(input_text)
+#   print("Simplified text:", simplified_text)
+
