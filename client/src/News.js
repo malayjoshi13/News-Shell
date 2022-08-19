@@ -83,7 +83,7 @@ const handleScrollPosition = () => {
             <button className="actionButtons actionSimplify" onClick={(e)=>{
               simplified?setSimplified(false):setSimplified(true)
             }}>{simplified?<p>{props.getPageLang=='en'?'Original Text':'मूल लेख'}</p>:<p>{props.getPageLang=='en'?'Simplify It':'इसे सरल करें'}</p>}</button>
-            <button className="actionButtons " onClick={handleClick}><Link className="moreLink" to={location.pathname==='/'?'news/more':'policies/more'}>{props.getPageLang=='en'?'View More':'और देखें'}</Link></button>
+            <button className="actionButtons " onClick={handleClick}><Link className="moreLink" to={location.pathname==='/'?'news/more':'policies/more'}>{props.getPageLang=='en'?'Analyse It':'विश्लेषण करें'}</Link></button>
 
           </div>
           <div className="actions">
@@ -104,7 +104,7 @@ const handleScrollPosition = () => {
             </div>
             </div>
           <div className="readMore">
-            <p>{props.getPageLang=='en'?'Read More': ''}<a className="linkSrc" onClick={handleClickToOpen}>{props.getPageLang=='en'?'Here': 'अधिक पढ़ें'}</a></p>
+            <p><a className="linkSrc" onClick={handleClickToOpen}>{props.getPageLang=='en'?'Get Full Context': 'पूरा संदर्भ प्राप्त करें'}</a></p>
             {/* <p>Read More <a className="linkSrc" onClick={handleClickToOpen}>Here</a></p> */}
             <Dialog fullScreen open={open} onClose={handleToClose}>
               <DialogActions>

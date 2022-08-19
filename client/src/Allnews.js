@@ -29,7 +29,6 @@ function Allnews(props) {
     await getNews();
   },[props.topic, currLang]);
   const totalData = props.topic==='top'?newsData:newsData.filter(element=>element.category===props.topic)
-  console.log(totalData.map((e)=>{console.log(e.news)}))
   const totalSearchData = newsData.filter(e=>e.heading.toLowerCase().includes(props.viewInput.toLowerCase()))
 
 return (<div className="container">
