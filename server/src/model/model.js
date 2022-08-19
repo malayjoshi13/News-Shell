@@ -6,6 +6,30 @@ const newsSchema = new mongoose.Schema(
             required: true,
             unique: true
         },
+        hheading:{
+            type: String,
+            required: true
+        },
+        simplify:{
+            type: String,
+            required: true
+        },
+        hnews:{
+            type: String,
+            required: true
+        },
+        hsource:{
+            type: String,
+            required: true
+        },
+        hsimplified:{
+            type: String,
+            required: true
+        },
+        hnewsDate:{
+            type: String,
+            required: true
+        },
         news:{
             type: String,
             required: true,
@@ -22,6 +46,9 @@ const newsSchema = new mongoose.Schema(
         imageUrl:{
             type: String,
             // required: true
+        },
+        simplified:{
+            type: Boolean,
         },
         source:{
             type: String,
