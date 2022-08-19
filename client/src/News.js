@@ -12,13 +12,11 @@ import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
-import { useSpeechSynthesis } from 'react-speech-kit';
 
 import img from "../src/newsDefault.png"
 // import { Box } from "@material-ui/core";
 function News(props) {
   const [simplified, setSimplified] = useState(false)
-  const { speak , voices} = useSpeechSynthesis();
   let location = useLocation();
   const handleClick=()=>{
     sessionStorage.setItem('scrollPosition', window.scrollY);
@@ -44,22 +42,40 @@ const handleScrollPosition = () => {
     setOpen(false);
   };
   const speakEnglish = (title,content) =>{
-    if(speaking == false){
-      setSpeaking(true)
-      console.log(voices[1])
-      speak({ text: title , voice : voices[1] });
-      speak({ text: content , voice : voices[1] });
-      setSpeaking(false)
-    }
+    let msg = new SpeechSynthesisUtterance()
+    let msg1 = new SpeechSynthesisUtterance()
+    console.log("Chala kya");
+    let voices = window.speechSynthesis.getVoices();
+    msg.text = title
+    msg.volume = 1
+    msg.rate=1
+    msg.pitch=1
+    msg.lang = "en-US"
+    msg.voice = voices[0]  
+    msg1.text = content 
+    msg1.voice = voices[0]   
+    console.log(msg);
+    console.log(msg1);
+    window.speechSynthesis.speak(msg)
+    window.speechSynthesis.speak(msg1)
   }
   const speakHindi = (title,content) =>{
-    if(speaking == false){
-      setSpeaking(true)
-      console.log(voices)
-      speak({ text: title , voice : voices[10] });
-      speak({ text: content , voice : voices[10] });
-      setSpeaking(false)
-    }
+    let msg = new SpeechSynthesisUtterance()
+    let msg1 = new SpeechSynthesisUtterance()
+    console.log("Chala kya");
+    msg.text = title
+    msg.lang = "hi-IN"
+    msg.volume = 1
+    msg.rate=1
+    msg.pitch=1
+    msg1.text = content
+    msg1.lang = "hi-IN"
+    console.log(msg);
+    console.log(msg1);
+    // console.log(window.speechSynthesis.getVoices());
+    let voices = window.speechSynthesis.getVoices();
+    window.speechSynthesis.speak(msg)
+    window.speechSynthesis.speak(msg1)
   }
   let news = props.content;
   let simplifiedNews = props.simplify
