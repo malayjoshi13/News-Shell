@@ -1,4 +1,4 @@
-export const policiesData = [
+const policiesData = [
     {
       "Domain": "India",
       "Headline": "Pradhan Mantri Jan Dhan Yojana (PMJDY)",
@@ -51,3 +51,4 @@ export const policiesData = [
     "Source": "indian express"
   },
   ]
+export default policiesData

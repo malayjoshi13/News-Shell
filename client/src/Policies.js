@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./Allnews.css";
 import './Policies.css';
-import { policiesData } from "./PoliciesData";
+import policiesData from "./PoliciesData";
 import News from "./News";
 import NoSearch from "./NoSearch";
 function Policies(props) {
