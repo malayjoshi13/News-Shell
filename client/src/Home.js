@@ -42,7 +42,8 @@ function Home() {
          <Route exact path="/policies/more">
           <More />
          </Route>
-         <Route exact path="/policies" component={Policies}></Route>
+         <Route exact path="/policies">
+          <Policies getpolicyLang={currLang} getpolicyWords={currWords}></Policies></Route>
        </Switch>
       </div>
     </>
