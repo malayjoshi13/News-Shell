@@ -1,20 +1,13 @@
-from flask import Flask, request, jsonify
-# from transformers import AutoModelForSeq2SeqLM
+from flask import Flask, request
 from Simplify import simplify_it
 from indexSumarize import summarize, hundred_word_summary
 
-from flask_pymongo import PyMongo
-import requests
-import json
-# from dnspython import dns
-
 app = Flask(__name__)
-# app.config["MONGO_URI"] = "mongodb://TeamNewshell:eovXKgDbc4ZEtNzs@cluster0.wf0qiyf.mongodb.net/NewshellTest?retryWrites=true&w=majority"
-# mongo = PyMongo(app)
 
 @app.route('/get', methods=['GET', 'POST'])
 def index():
     global final_output, data
+    data=dict()
     if request.method == 'POST':
         data = request.get_json()
         input_text = data['news']
@@ -31,7 +24,7 @@ def index():
             chunk_start += max_length
             chunk_end += max_length
     
-#   #--------------------------------------------------------------------------
+#---------------------------------------------------------------------------------
 
   # apply function on each batch 
         for batch_id in inputs_batch_dict:
@@ -56,7 +49,6 @@ def index():
         simplified = simplify_it(hundred)
         print(simplified)
         data['simplify'] = simplified
-        # print(data, input_text)
     return data
 
 if __name__ == "__main__":
